@@ -1,0 +1,2 @@
+class TechStack < ApplicationRecord
+end
