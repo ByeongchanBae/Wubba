@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   def show
-    @user.possibles
+    @list_of_possibles = current_user.possibles
   end
 end
 

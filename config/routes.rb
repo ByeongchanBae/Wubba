@@ -5,4 +5,5 @@ Rails.application.routes.draw do
       resources :tech_stack, only: [:show]
   end
   resources :user_selections, only: [:destroy]
+  get 'dashboard', to: 'dashboards#show'
 end

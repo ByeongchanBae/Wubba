@@ -1,0 +1,15 @@
+<div class="card-trip">
+  <% @list_of_possibles.each do |possible| %>
+  <div class="card-trip-infos">
+    <h3><%= possible.first_name %> <%= possible.last_name %></h3>
+    <p><%= possible.username %></p>
+    <p><%= possible.experience_level %></p>
+    <p><%= possible.city %></p>
+    <p><%= possible.country %></p>
+    <p><%= possible.gender %></p>
+    <p><%= possible.education %></p>
+    <p><%= possible.bootcamp %></p>
+    <p><%= possible.employment_status %></p>
+    <% end %>
+  </div>
+</div>
