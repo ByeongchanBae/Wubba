@@ -17,5 +17,5 @@ end
 # - make a form with a button:
 #   - creating a new match
 #   - check params
-#   - does it sete the ematchee / do w ned to do ourselvese?
-#   - matchre status to yourself in the create metehod
+#   - does it set the matchee or do w ned to set it ourselvese?
+#   - matcher status to yourself in the create metehod
