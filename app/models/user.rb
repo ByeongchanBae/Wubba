@@ -9,8 +9,9 @@ class User < ApplicationRecord
   potential_matches = tech_stacks.map do |tech_stack|
     tech_stack.users
     end
-  potential_matches.uniq
-  me = potential_matches.find(params[:current_user])
-  me.destroy
+
+  flat_matches = potential_matches.flatten
+  unique_matches = flat_matches.uniq
+  unique_matches.reject { |user| user == self }
   end
 end
