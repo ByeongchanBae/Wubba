@@ -4,4 +4,5 @@ class UserSelection < ApplicationRecord
 
   validates :experience, presence: true
   validates :objective, presence: true
+
 end
