@@ -12,4 +12,5 @@ class User < ApplicationRecord
   potential_matches.uniq
   me = potential_matches.find(params[:current_user])
   me.destroy
+  end
 end

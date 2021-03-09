@@ -1,6 +1,8 @@
 puts "Cleaning database..."
 
+UserSelection.destroy_all
 User.destroy_all
+TechStack.destroy_all
 # everything has to be destroyed
 
 # matchees seed (a confirmed match with messages - different scenarios)
@@ -164,129 +166,173 @@ user_list = [{
 }]
 
 #  images
-User.create!(user_list)
-file = URI.open('https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
-user = User.find_by(email: "ryan@gmail.com")
-user.avatar.attach(io: file, filename: 'user.png', content_type: 'image/png')
+# User.create!(user_list)
+# file = URI.open('https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
+# user = User.find_by(email: "ryan@gmail.com")
+# user.avatar.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
-file = URI.open('https://images.unsplash.com/photo-1556157382-97eda2d62296?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
-user = User.find_by(email: "angus@gmail.com")
-user.avatar.attach(io: file, filename: 'user2.png', content_type: 'image/png')
+# file = URI.open('https://images.unsplash.com/photo-1556157382-97eda2d62296?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+# user = User.find_by(email: "angus@gmail.com")
+# user.avatar.attach(io: file, filename: 'user2.png', content_type: 'image/png')
 
-file = URI.open('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
-user = User.find_by(email: "kiera@gmail.com")
-user.avatar.attach(io: file, filename: 'user3.png', content_type: 'image/png')
+# file = URI.open('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
+# user = User.find_by(email: "kiera@gmail.com")
+# user.avatar.attach(io: file, filename: 'user3.png', content_type: 'image/png')
 
-file = URI.open('https://images.unsplash.com/photo-1606511647870-4106713a7354?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
-user = User.find_by(email: "kate@gmail.com")
-user.avatar.attach(io: file, filename: 'user4.png', content_type: 'image/png')
+# file = URI.open('https://images.unsplash.com/photo-1606511647870-4106713a7354?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+# user = User.find_by(email: "kate@gmail.com")
+# user.avatar.attach(io: file, filename: 'user4.png', content_type: 'image/png')
 
-file = URI.open('https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1758&q=80')
-user = User.find_by(email: "john@gmail.com")
-user.avatar.attach(io: file, filename: 'user5.png', content_type: 'image/png')
+# file = URI.open('https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1758&q=80')
+# user = User.find_by(email: "john@gmail.com")
+# user.avatar.attach(io: file, filename: 'user5.png', content_type: 'image/png')
 
-file = URI.open('https://images.unsplash.com/photo-1577880216142-8549e9488dad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
-user = User.find_by(email: "sam@gmail.com")
-user.avatar.attach(io: file, filename: 'user6.png', content_type: 'image/png')
+# file = URI.open('https://images.unsplash.com/photo-1577880216142-8549e9488dad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')
+# user = User.find_by(email: "sam@gmail.com")
+# user.avatar.attach(io: file, filename: 'user6.png', content_type: 'image/png')
 
-file = URI.open('https://images.unsplash.com/photo-1480429370139-e0132c086e2a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
-user = User.find_by(email: "carl@gmail.com")
-user.avatar.attach(io: file, filename: 'user7.png', content_type: 'image/png')
+# file = URI.open('https://images.unsplash.com/photo-1480429370139-e0132c086e2a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+# user = User.find_by(email: "carl@gmail.com")
+# user.avatar.attach(io: file, filename: 'user7.png', content_type: 'image/png')
 
-file = URI.open('https://images.unsplash.com/photo-1561677843-39dee7a319ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
-user = User.find_by(email: "phil@gmail.com")
-user.avatar.attach(io: file, filename: 'user8.png', content_type: 'image/png')
+# file = URI.open('https://images.unsplash.com/photo-1561677843-39dee7a319ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
+# user = User.find_by(email: "phil@gmail.com")
+# user.avatar.attach(io: file, filename: 'user8.png', content_type: 'image/png')
 
-file = URI.open('https://images.unsplash.com/photo-1555258577-9c68a1b59f1d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80')
-user = User.find_by(email: "nick@gmail.com")
-user.avatar.attach(io: file, filename: 'user9.png', content_type: 'image/png')
+# file = URI.open('https://images.unsplash.com/photo-1555258577-9c68a1b59f1d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80')
+# user = User.find_by(email: "nick@gmail.com")
+# user.avatar.attach(io: file, filename: 'user9.png', content_type: 'image/png')
 
-file = URI.open('https://images.unsplash.com/photo-1571281843402-3cd9758bc825?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80')
-user = User.find_by(email: "lily@gmail.com")
-user.avatar.attach(io: file, filename: 'user10.png', content_type: 'image/png')
+# file = URI.open('https://images.unsplash.com/photo-1571281843402-3cd9758bc825?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80')
+# user = User.find_by(email: "lily@gmail.com")
+# user.avatar.attach(io: file, filename: 'user10.png', content_type: 'image/png')
 
-puts "Created #{User.count} users!"
+# puts "Created #{User.count} users!"
 
 puts "Creating Tech Stacks.."
 
 #  tech stacks
 tech_stacks_list = [{
   name: "JavaScript"
-}
-{,
+},
+{
   name: "HTML"
-}
-{,
+},
+{
   name: "CSS"
-}
-{,
+},
+{
   name: "Ruby"
-}
-{,
+},
+{
   name: "Python"
-}
-{,
+},
+{
   name: "C++"
-}
-{,
+},
+{
   name: "PostgreSQL"
-}
-{,
+},
+{
   name: "React"
-}
-{,
+},
+{
   name: "TypeScript"
-}
-{,
+},
+{
   name: "NodeJS"
-}
-{,
+},
+{
   name: "Linux"
-}
-{,
+},
+{
   name: "MySQL"
-  }
-{,
+},
+{
   name: "Sass"
-}
-{,
+},
+{
   name: "Apollo"
-}
-{,
+},
+{
   name: "jQuery"
-}
-{,
+},
+{
   name: "Kotlin"
 }]
 
-# puts "Created #{Tech_stacks.count} Teach Stacks!"
-# puts "Created Tech Stacks!"
+puts "Created #{TechStack.count} Teach Stacks!"
+puts "Created Tech Stacks!"
+
+TechStack.create!(tech_stacks_list)
+
 
 #  user selections
 user_selections_list = [{
-  user = User.find_by(email: "ryan@gmail.com"),
-  tech_stacks = Tech_stacks.find_by(name: "JavaScript"),
-  partner = User.find_by(email: "angus@gmail.com")
-}
-{,
-  user = User.find_by(email: "kiera@gmail.com"),
-  tech_stacks = Tech_stacks.find_by(name: "Ruby"),
-  partner = User.find_by(email: "lily@gmail.com")
-}
-{,
-  user = User.find_by(email: "john@gmail.com"),
-  tech_stacks = Tech_stacks.find_by(name: "NodeJS"),
-  partner = User.find_by(email: "sam@gmail.com")
-}
-{,
-  user = User.find_by(email: "carl@gmail.com"),
-  tech_stacks = Tech_stacks.find_by(name: "TypeScript"),
-  partner = User.find_by(email: "nick@gmail.com")
-}
-{,
-  user = User.find_by(email: "phil@gmail.com"),
-  tech_stacks = Tech_stacks.find_by(name: "Sass"),
-  partner = User.find_by(email: "kate@gmail.com")
+  user: User.find_by(email: "ryan@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Beginner",
+  objective: "To get a graduate position"
+},
+{
+  user: User.find_by(email: "angus@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Beginner",
+  objective: "To become a Software Engineer"
+},
+{
+  user: User.find_by(email: "angus@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Beginner",
+  objective: "To become a Software Engineer"
+},
+{
+  user: User.find_by(email: "kiera@gmail.com"),
+  tech_stack: TechStack.find_by(name: "Ruby"),
+  experience: "Beginner",
+  objective: "To get a junior developer position"
+},
+{
+  user: User.find_by(email: "kate@gmail.com"),
+  tech_stack: TechStack.find_by(name: "Python"),
+  experience: "Advanced",
+  objective: "To help people with Python"
+},
+{
+  user: User.find_by(email: "john@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Advanced",
+  objective: "To learn a new language"
+},
+{
+  user: User.find_by(email: "sam@gmail.com"),
+  tech_stack: TechStack.find_by(name: "Ruby"),
+  experience: "Intermediate",
+  objective: "To expand my skills"
+},
+{
+  user: User.find_by(email: "carl@gmail.com"),
+  tech_stack: TechStack.find_by(name: "C++"),
+  experience: "Beginner",
+  objective: "To help people get a graduate jobs"
+},
+{
+  user: User.find_by(email: "phil@gmail.com"),
+  tech_stack: TechStack.find_by(name: "HTML"),
+  experience: "Intermediate",
+  objective: "Learn skills to become a senior Software Engineer"
+},
+{
+  user: User.find_by(email: "nick@gmail.com"),
+  tech_stack: TechStack.find_by(name: "Kotlin"),
+  experience: "Beginner",
+  objective: "To learn another language"
+},
+{
+  user: User.find_by(email: "lily@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Intermediate",
+  objective: "Want to challenge my knowledge on certain languages"
 }]
 
 # puts "Created #{User_selections.count} User Selections!"
