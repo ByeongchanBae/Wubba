@@ -26,8 +26,9 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <li class="nav-item d-flex">
+          <%= link_to "Login", "#", class: "nav-link" %>
+          <%= link_to "Sign Up", "#", class:"btn-primary" %>
         </li>
       <% end %>
     </ul>
