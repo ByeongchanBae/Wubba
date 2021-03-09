@@ -207,7 +207,7 @@ user_list = [{
 # user = User.find_by(email: "lily@gmail.com")
 # user.avatar.attach(io: file, filename: 'user10.png', content_type: 'image/png')
 
-# puts "Created #{User.count} users!"
+puts "Created #{User.count} users!"
 
 puts "Creating Tech Stacks.."
 
