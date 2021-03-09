@@ -1,1 +1,18 @@
 // Specific CSS for your home-page
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 300px 0;
+}
+
+.banner .btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1789e6;
+  padding: 16px 36px;
+  border-radius: 50px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+}

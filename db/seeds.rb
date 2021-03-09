@@ -166,7 +166,7 @@ user_list = [{
 }]
 
 #  images
-# User.create!(user_list)
+User.create!(user_list)
 # file = URI.open('https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
 # user = User.find_by(email: "ryan@gmail.com")
 # user.avatar.attach(io: file, filename: 'user.png', content_type: 'image/png')
@@ -261,10 +261,12 @@ tech_stacks_list = [{
   name: "Kotlin"
 }]
 
-puts "Created #{TechStack.count} Teach Stacks!"
+TechStack.create!(tech_stacks_list)
+
+puts "Created #{TechStack.count} Tech Stacks!"
 puts "Created Tech Stacks!"
 
-TechStack.create!(tech_stacks_list)
+
 
 
 #  user selections
@@ -273,12 +275,6 @@ user_selections_list = [{
   tech_stack: TechStack.find_by(name: "JavaScript"),
   experience: "Beginner",
   objective: "To get a graduate position"
-},
-{
-  user: User.find_by(email: "angus@gmail.com"),
-  tech_stack: TechStack.find_by(name: "JavaScript"),
-  experience: "Beginner",
-  objective: "To become a Software Engineer"
 },
 {
   user: User.find_by(email: "angus@gmail.com"),
@@ -335,5 +331,6 @@ user_selections_list = [{
   objective: "Want to challenge my knowledge on certain languages"
 }]
 
-# puts "Created #{User_selections.count} User Selections!"
-# puts "Created User Selections!"
+UserSelection.create!(user_selections_list)
+puts "Created #{UserSelection.count} User Selections!"
+puts "Created User Selections!"
