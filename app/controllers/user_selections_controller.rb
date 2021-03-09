@@ -39,6 +39,6 @@ private
   end
 
   def selection_params
-    params.require(:user_selection).permit(:experience, :objective, :tech_stack)
+    params.require(:user_selection).permit(:experience, :objective, :tech_stack_id)
   end
 end
