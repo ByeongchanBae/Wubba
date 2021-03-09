@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+    <%= simple_form_for user_selection do |f| %>
+    <%= f.input :tech_stack, :collection => %w[Python Go Ruby JavaScript TypeScript C++ C# C Rust Java]%>
+    <%= f.input :experience, :collection => %w[Beginner Intermediate Advanced]%>
+    <%= f.input :objective %>
+    <%= f.button :submit, "Find your buddy", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
