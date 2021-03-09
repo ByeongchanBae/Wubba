@@ -1,6 +1,8 @@
 class MatchsController < ApplicationController
   def create
-    @match = Match.new(params[:matchee_])
+    @match = Match.new(match_params)
+    @match.matcher = current_user
+    @match.save
   end
 
 
@@ -9,5 +11,11 @@ class MatchsController < ApplicationController
   def match_params
     params.require(:match).permit(:matchee_id, :matcher_id, :matchee_status, :matcher_status)
   end
-
 end
+
+
+# - make a form with a button:
+#   - creating a new match
+#   - check params
+#   - does it sete the ematchee / do w ned to do ourselvese?
+#   - matchre status to yourself in the create metehod
