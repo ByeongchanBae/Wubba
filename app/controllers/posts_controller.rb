@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def update
-   @post.update(post_params)
+    @post.update(post_params)
   end
 
   def destroy
@@ -29,6 +29,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def find_post
     @post = Post.find(params[:id])
   end
