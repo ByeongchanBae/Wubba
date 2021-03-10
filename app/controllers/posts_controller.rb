@@ -9,9 +9,12 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @user = User.find(params[:booking_id])
+    @user = User.find(params[:user_id])
     @post.user = @user
-    @post.save
+    if @post.save
+      redirect_to post_path(@post)
+    else
+      render :new
   end
 
   def show
@@ -38,3 +41,6 @@ class PostsController < ApplicationController
     params.require(:post).permit(:description, :date, :title)
   end
 end
+
+# create a comments model & controller
+# post has many comments
