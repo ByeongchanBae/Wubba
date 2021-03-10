@@ -3,6 +3,7 @@ puts "Cleaning database..."
 UserSelection.destroy_all
 User.destroy_all
 TechStack.destroy_all
+Post.destroy_all
 # everything has to be destroyed
 
 # matchees seed (a confirmed match with messages - different scenarios)
@@ -281,7 +282,7 @@ TechStack.create!(tech_stacks_list)
 puts "Created #{TechStack.count} Tech Stacks!"
 puts "Created Tech Stacks!"
 
-
+puts "Created User Selections!"
 
 
 #  user selections
@@ -354,4 +355,22 @@ user_selections_list = [{
 
 UserSelection.create!(user_selections_list)
 puts "Created #{UserSelection.count} User Selections!"
-puts "Created User Selections!"
+
+
+puts "Creating Posts.."
+posts_list = [{
+  title: "Learn JavaScript",
+  description: "Anyone want to learn JavaScript?",
+  user: User.find_by(email: "john@gmail.com"),
+  date: Date.today
+},
+{
+  title: "Learn Ruby",
+  description: "Anyone want to learn Ruby?",
+  user: User.find_by(email: "ryan@gmail.com"),
+  date: Date.today
+}]
+Post.create!(posts_list)
+puts "Created #{Post.count} posts!"
+
+

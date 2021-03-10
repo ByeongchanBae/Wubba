@@ -13,6 +13,3 @@ Rails.application.routes.draw do
   resources :comments, only: [ :show, :edit, :update, :destroy ]
 end
 
-#  post nested in user (shallow edit)
-
-#  comments nested in post (shallow edit) (advanced routing )
