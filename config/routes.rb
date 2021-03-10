@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :user_selections, only: [:destroy]
   get 'dashboard', to: 'dashboards#show'
   get 'index', to: 'matchs#index'
+  post "/approve/:id" => "matchs#approve", as: :approve_user
+  post "/decline/:id" => "matchs#decline", as: :decline_user
 
 
   resources :posts do

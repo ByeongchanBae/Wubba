@@ -17,6 +17,7 @@ class MatchsController < ApplicationController
   end
 
   def approve
+    logger.debug "User id for matching is #{params[:id]}"
   end
 
   def decline
