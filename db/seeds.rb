@@ -163,6 +163,21 @@ user_list = [{
   employment_status: "Employed",
   bootcamp: true,
   experience_level: "5 years"
+},
+{
+  email: "miles@gmail.com",
+  password: "password",
+  first_name: "Miles",
+  last_name: "Micheals",
+  username: "milesmicheals",
+  city: "Perth",
+  country: "Australia",
+  gender: "Male",
+  education: "No university degree",
+  age: 38,
+  employment_status: "Employed",
+  bootcamp: true,
+  experience_level: "2 years"
 }]
 
 #  images
@@ -329,6 +344,12 @@ user_selections_list = [{
   tech_stack: TechStack.find_by(name: "JavaScript"),
   experience: "Intermediate",
   objective: "Want to challenge my knowledge on certain languages"
+},
+{
+  user: User.find_by(email: "miles@gmail.com"),
+  tech_stack: TechStack.find_by(name: "jQuery"),
+  experience: "Beginner",
+  objective: "Want to expand my developing skills"
 }]
 
 UserSelection.create!(user_selections_list)
