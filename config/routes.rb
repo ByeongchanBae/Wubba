@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   resources :user_selections, only: [:destroy]
   get 'dashboard', to: 'dashboards#show'
+  get 'index', to: 'matchs#index'
 end

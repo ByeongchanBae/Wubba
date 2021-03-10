@@ -1,15 +1,25 @@
 class MatchsController < ApplicationController
-  def create
-    @match = Match.new(match_params)
-    @match.matcher = current_user
-    @match.save
+  # def create
+  #   @match = Match.new(match_params)
+  #   @match.matcher = current_user
+  #   @match.save
+  # end
+
+
+  # private
+
+  # def match_params
+  #   params.require(:match).permit(:matchee_id, :matcher_id, :matchee_status, :matcher_status)
+  # end
+
+  def index
+    @possibles = current_user.possibles
   end
 
+  def approve
+  end
 
-  private
-
-  def match_params
-    params.require(:match).permit(:matchee_id, :matcher_id, :matchee_status, :matcher_status)
+  def decline
   end
 end
 

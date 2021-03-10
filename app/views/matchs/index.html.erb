@@ -1,0 +1,17 @@
+
+  <ul id="slides">
+    <% @possibles.each_with_index do |possible, index| %>
+    <div class="slide" data-id="<%= index %>">
+      <li> <%= possible.first_name %> </li>
+      <% if possible.avatar.attached? %>
+      <li> <%= cl_image_tag possible.avatar.key, :width => 400, :crop => "pad" %> </li>
+      <% end %>
+    </div>
+    <% end %>
+  </ul>
+<div class="d-flex flex-column align-items-center">
+  <div id="slide-controls">
+    <span class="controls" id="decline"><i class="fa fa-times fa-2x"></i></span>
+    <span class="controls" id="approve"><i class="fa fa-check fa-2x"></i></span>
+  </div>
+</div>
