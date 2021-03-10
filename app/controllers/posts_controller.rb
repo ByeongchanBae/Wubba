@@ -2,6 +2,10 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
   before_action :find_post, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @posts = Post.all
+  end
+
   def new
     @post = Post.new
     @user = User.find(params[:user_id])
@@ -15,6 +19,7 @@ class PostsController < ApplicationController
       redirect_to post_path(@post)
     else
       render :new
+    end
   end
 
   def show
@@ -42,5 +47,3 @@ class PostsController < ApplicationController
   end
 end
 
-# create a comments model & controller
-# post has many comments
