@@ -3,6 +3,7 @@ puts "Cleaning database..."
 UserSelection.destroy_all
 User.destroy_all
 TechStack.destroy_all
+Post.destroy_all
 # everything has to be destroyed
 
 # matchees seed (a confirmed match with messages - different scenarios)
@@ -163,6 +164,21 @@ user_list = [{
   employment_status: "Employed",
   bootcamp: true,
   experience_level: "5 years"
+},
+{
+  email: "miles@gmail.com",
+  password: "password",
+  first_name: "Miles",
+  last_name: "Micheals",
+  username: "milesmicheals",
+  city: "Perth",
+  country: "Australia",
+  gender: "Male",
+  education: "No university degree",
+  age: 38,
+  employment_status: "Employed",
+  bootcamp: true,
+  experience_level: "2 years"
 }]
 
 #  images
@@ -266,7 +282,7 @@ TechStack.create!(tech_stacks_list)
 puts "Created #{TechStack.count} Tech Stacks!"
 puts "Created Tech Stacks!"
 
-
+puts "Created User Selections!"
 
 
 #  user selections
@@ -329,8 +345,32 @@ user_selections_list = [{
   tech_stack: TechStack.find_by(name: "JavaScript"),
   experience: "Intermediate",
   objective: "Want to challenge my knowledge on certain languages"
+},
+{
+  user: User.find_by(email: "miles@gmail.com"),
+  tech_stack: TechStack.find_by(name: "jQuery"),
+  experience: "Beginner",
+  objective: "Want to expand my developing skills"
 }]
 
 UserSelection.create!(user_selections_list)
 puts "Created #{UserSelection.count} User Selections!"
-puts "Created User Selections!"
+
+
+puts "Creating Posts.."
+posts_list = [{
+  title: "Learn JavaScript",
+  description: "Anyone want to learn JavaScript?",
+  user: User.find_by(email: "john@gmail.com"),
+  date: Date.today
+},
+{
+  title: "Learn Ruby",
+  description: "Anyone want to learn Ruby?",
+  user: User.find_by(email: "ryan@gmail.com"),
+  date: Date.today
+}]
+Post.create!(posts_list)
+puts "Created #{Post.count} posts!"
+
+
