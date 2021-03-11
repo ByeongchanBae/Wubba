@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_062834) do
+ActiveRecord::Schema.define(version: 2021_03_10_012458) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +36,36 @@ ActiveRecord::Schema.define(version: 2021_03_10_062834) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
+
+  create_table "group_members", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "group_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_group_members_on_group_id"
+    t.index ["user_id"], name: "index_group_members_on_user_id"
+  end
+
+  create_table "group_messages", force: :cascade do |t|
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "match_messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "match_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["match_id"], name: "index_match_messages_on_match_id"
+    t.index ["user_id"], name: "index_match_messages_on_user_id"
 
   create_table "comments", force: :cascade do |t|
     t.bigint "post_id", null: false
@@ -108,11 +139,18 @@ ActiveRecord::Schema.define(version: 2021_03_10_062834) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+
+  add_foreign_key "group_members", "groups"
+  add_foreign_key "group_members", "users"
+  add_foreign_key "match_messages", "matches"
+  add_foreign_key "match_messages", "users"
+
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "matches", "users", column: "matchee_id"
   add_foreign_key "matches", "users", column: "matcher_id"
   add_foreign_key "posts", "users"
+
   add_foreign_key "user_selections", "tech_stacks"
   add_foreign_key "user_selections", "users"
 end
