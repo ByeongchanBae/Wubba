@@ -5,6 +5,11 @@ class MatchsController < ApplicationController
     @match.save
   end
 
+  def show
+    @match = Match.find(params[:id])
+    @match_message = MatchMessage.new
+  end
+
 
   private
 

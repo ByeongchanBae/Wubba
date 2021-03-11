@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   end
   resources :user_selections, only: [:destroy]
   get 'dashboard', to: 'dashboards#show'
+  resources :matches, only: [:show, :create] do
+    resources :messages, only: :create
+  end
 end
