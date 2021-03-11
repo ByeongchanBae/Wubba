@@ -21,25 +21,26 @@
         <% @list_of_possibles.each do |possible| %>
         <div class="card-trip-infos">
         <h3><%= possible.first_name %> <%= possible.last_name %></h3>
-        <p><%= possible.username %></p>
-        <p><%= possible.experience_level %></p>
-        <p><%= possible.city %></p>
-        <p><%= possible.country %></p>
-        <p><%= possible.gender %></p>
-        <p><%= possible.education %></p>
-        <p><%= possible.bootcamp %></p>
-        <p><%= possible.employment_status %></p>
+        <p>Username: <%= possible.username %></p>
+        <p>Experience: <%= possible.experience_level %></p>
+        <p>Location: <%= possible.city %>, <%= possible.country %></p>
+        <p>Gender: <%= possible.gender %></p>
+        <p>Education: <%= possible.education %></p>
+        <p>Bootcamp: <%= possible.bootcamp %></p>
+        <p>Employment Status: <%= possible.employment_status %></p>
+        <a href="#" class="btn-blue">Message me</a>
         <% end %>
         </div>
       </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="profile">
       <h1> Your profile </h1>
+      <div class="card-trip">
       <h2> <%= @user.first_name %> <%= @user.last_name %> </h2>
-      <p> <%= @user.city %></p>
-      <p> <%= @user.country %></p>
-      <p> <%= @user.education %> </p>
-      <p> <%= @user.bootcamp %> </p>
+      <p> Location: <%= @user.city %>, <%= @user.country %> </p>
+      <p> Education: <%= @user.education %> </p>
+      <p> Bootcamp? <%= @user.bootcamp %> </p>
+      </div>
     </div>
     <div role="tabpanel" class="tab-pane" id="matches">
       <h2> Here are your matches: </h2>
