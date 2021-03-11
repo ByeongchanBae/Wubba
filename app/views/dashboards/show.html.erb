@@ -1,15 +1,52 @@
-<div class="card-trip">
-  <% @list_of_possibles.each do |possible| %>
-  <div class="card-trip-infos">
-    <h3><%= possible.first_name %> <%= possible.last_name %></h3>
-    <p><%= possible.username %></p>
-    <p><%= possible.experience_level %></p>
-    <p><%= possible.city %></p>
-    <p><%= possible.country %></p>
-    <p><%= possible.gender %></p>
-    <p><%= possible.education %></p>
-    <p><%= possible.bootcamp %></p>
-    <p><%= possible.employment_status %></p>
-    <% end %>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<div>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a>
+    </li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a>
+    </li>
+    <li role="presentation"><a href="#matches" aria-controls="matches" role="tab" data-toggle="tab">Matches</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+      <h1>Welcome <%= @user.first_name %> <%= @user.last_name %></h1>
+      <h2>Here are some possible matches</h2>
+      <div class="card-trip">
+        <% @list_of_possibles.each do |possible| %>
+        <div class="card-trip-infos">
+        <h3><%= possible.first_name %> <%= possible.last_name %></h3>
+        <p>Username: <%= possible.username %></p>
+        <p>Experience: <%= possible.experience_level %></p>
+        <p>Location: <%= possible.city %>, <%= possible.country %></p>
+        <p>Gender: <%= possible.gender %></p>
+        <p>Education: <%= possible.education %></p>
+        <p>Bootcamp: <%= possible.bootcamp %></p>
+        <p>Employment Status: <%= possible.employment_status %></p>
+        <a href="#" class="btn-blue">Message me</a>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <h1> Your profile </h1>
+      <div class="card-trip">
+      <h2> <%= @user.first_name %> <%= @user.last_name %> </h2>
+      <p> Location: <%= @user.city %>, <%= @user.country %> </p>
+      <p> Education: <%= @user.education %> </p>
+      <p> Bootcamp? <%= @user.bootcamp %> </p>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="matches">
+      <h2> Here are your matches: </h2>
+    </div>
   </div>
 </div>
+
+
+
