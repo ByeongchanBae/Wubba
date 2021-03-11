@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :matchers, class_name: "Match", foreign_key: "matcher_id"
   has_many :matchees, class_name: "Match", foreign_key: "matchee_id"
+  has_many :matches
+
 
   def possibles
   potential_matches = tech_stacks.map do |tech_stack|
