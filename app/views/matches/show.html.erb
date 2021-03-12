@@ -1,4 +1,8 @@
-<div id="messages" data-match-id="<%= @match.id %>">
+<% @matches.each do |match|%>
+<h1> Conversation with <%= match.partner(current_user).first_name %></h1>
+<% end %>
+
+<div id="messages" data-match-id="<%= @matches %>">
   <% @match.match_messages.each do |message| %>
     <div class="message-container" id="message-<%= message.id %>">
       <i class="author">
@@ -10,8 +14,7 @@
   <% end %>
 </div>
 
-
-
-<%= simple_form_for [ @match, @match_message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message #{@matchee.first_name}" %>
+<%= simple_form_for [ @match, @match_message ] do |f| %>
+  <%= f.input :content, label: false, placeholder: "Message #{@match.partner(current_user).first_name}" %>
 <% end %>
+

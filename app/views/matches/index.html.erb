@@ -6,7 +6,7 @@
       <% if possible.avatar.attached? %>
       <div class="image-carousel d-flex flex-column text-align-center"> <%= cl_image_tag possible.avatar.key, :width => 250, :crop => "pad", class:"image" %> </div>
       <% end %>
-      <%= link_to "Create match", matches_path(match: { matchee_id: possible.id, status: 2 } ), method: :post, class: "btn btn-primary" %>
+      <%= link_to "Create match", matches_path(match: { matchee_id: possible.id, status: 1 } ), method: :post, class: "btn btn-primary" %>
       <%= link_to "Decline match", matches_path(match: { matchee_id: possible.id, status: 0 } ), method: :post, class: "btn btn-primary" %>
     </div>
     <% end %>
@@ -23,7 +23,3 @@
 
 
 
-
-
-
-<!-- If statement in index page -->

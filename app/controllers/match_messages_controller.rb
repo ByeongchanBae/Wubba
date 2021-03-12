@@ -5,7 +5,7 @@ class MatchMessagesController < ApplicationController
     @match_message.match = @match
     @match_message.user = current_user
     if @match_message.save
-      redirect_to match_path(@match, anchor: "message-#{@message.id}")
+      redirect_to match_path(@match)
     else
       render "match/show"
     end

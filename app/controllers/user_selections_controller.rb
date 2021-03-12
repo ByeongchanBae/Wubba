@@ -10,7 +10,7 @@ class UserSelectionsController < ApplicationController
     @user_selection = UserSelection.new(selection_params)
     @user_selection.user = current_user
       if @user_selection.save
-        redirect_to dashboard_path
+        redirect_to matches_path
       else
         render :new
       end

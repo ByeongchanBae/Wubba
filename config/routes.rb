@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post "/decline/:id" => "matches#decline", as: :decline_user
 
   resources :matches, only: [:show, :create, :index] do
-    resources :messages, only: :create
+    resources :match_messages, only: :create
   end
   resources :posts do
     resources :comments, only: [ :index, :new, :create ]
