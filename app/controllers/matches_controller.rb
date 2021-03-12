@@ -19,6 +19,7 @@ class MatchesController < ApplicationController
 
   def show
     @matches = current_user.matches
+    @match_message = MatchMessage.new
   end
 
   def index

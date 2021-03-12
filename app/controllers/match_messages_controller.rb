@@ -15,6 +15,6 @@ class MatchMessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:match_message).permit(:content, :match)
+    params.require(:match_message).permit(:content)
   end
 end
