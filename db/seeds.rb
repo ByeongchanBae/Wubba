@@ -1,9 +1,11 @@
 puts "Cleaning database..."
 
+Match.destroy_all
+Post.destroy_all
 UserSelection.destroy_all
 User.destroy_all
 TechStack.destroy_all
-Post.destroy_all
+
 # everything has to be destroyed
 
 # matchees seed (a confirmed match with messages - different scenarios)
@@ -188,6 +190,96 @@ user_list = [{
   employment_status: "Employed",
   bootcamp: true,
   experience_level: "2 years"
+},
+{
+  email: "shay@gmail.com",
+  password: "password",
+  first_name: "Shay",
+  last_name: "Kim",
+  username: "shaykim",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Female",
+  education: "Seoul National University Bachelor of IT",
+  age: 27,
+  employment_status: "Employed",
+  bootcamp: true,
+  experience_level: "4 years"
+},
+{
+  email: "kiara@gmail.com",
+  password: "password",
+  first_name: "Kiara",
+  last_name: "Tan",
+  username: "kiaratan",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Female",
+  education: "RMIT Masters of IT",
+  age: 24,
+  employment_status: "Employed",
+  bootcamp: false,
+  experience_level: "1 year"
+},
+{
+  email: "ian@gmail.com",
+  password: "password",
+  first_name: "Ian",
+  last_name: "Car",
+  username: "iancar",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Male",
+  education: "No university degree - self taught",
+  age: 32,
+  employment_status: "Employed",
+  bootcamp: false,
+  experience_level: "6 years"
+},
+{
+  email: "mick@gmail.com",
+  password: "password",
+  first_name: "Mick",
+  last_name: "Trump",
+  username: "micktrump",
+  city: "Sydney",
+  country: "Australia",
+  gender: "Male",
+  education: "Macquarie University Bachelor of Computer Science",
+  age: 42,
+  employment_status: "Advanced",
+  bootcamp: false,
+  experience_level: "20 years"
+},
+{
+  email: "ash@gmail.com",
+  password: "password",
+  first_name: "Ash",
+  last_name: "Jobs",
+  username: "ashjobs",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Male",
+  education: "Federation University Bachelor of Computer Science",
+  age: 32,
+  employment_status: "Advanced",
+  bootcamp: false,
+  experience_level: "10 years"
+},
+{
+  email: "maia@gmail.com",
+  password: "password",
+  first_name: "Maia",
+  last_name: "Vich",
+  username: "maiavich",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Female",
+  education: "Federation University Bachelor of Computer Science",
+  age: 19,
+  employment_status: "Beginner",
+  bootcamp: false,
+  experience_level: "0 years"
 }]
 
 #  images
@@ -231,6 +323,34 @@ user.avatar.attach(io: file, filename: 'user9.png', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1571281843402-3cd9758bc825?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80')
 user = User.find_by(email: "lily@gmail.com")
 user.avatar.attach(io: file, filename: 'user10.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1537511446984-935f663eb1f4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
+user = User.find_by(email: "miles@gmail.com")
+user.avatar.attach(io: file, filename: 'user11.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1564564360647-684f24ae3e1c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80')
+user = User.find_by(email: "shay@gmail.com")
+user.avatar.attach(io: file, filename: 'user12.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1529232356377-57971f020a94?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+user = User.find_by(email: "kiara@gmail.com")
+user.avatar.attach(io: file, filename: 'user13.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1581382575275-97901c2635b7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80')
+user = User.find_by(email: "ian@gmail.com")
+user.avatar.attach(io: file, filename: 'user14.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1579798795533-caef937ece1f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80')
+user = User.find_by(email: "mick@gmail.com")
+user.avatar.attach(io: file, filename: 'user14.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1529421308418-eab98863cee4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80')
+user = User.find_by(email: "ash@gmail.com")
+user.avatar.attach(io: file, filename: 'user15.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1592085549957-ca20be013d96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=576&q=80')
+user = User.find_by(email: "maia@gmail.com")
+user.avatar.attach(io: file, filename: 'user16.png', content_type: 'image/png')
 
 puts "Created #{User.count} users!"
 
@@ -360,6 +480,42 @@ user_selections_list = [{
   tech_stack: TechStack.find_by(name: "jQuery"),
   experience: "Beginner",
   objective: "Want to expand my developing skills"
+},
+{
+  user: User.find_by(email: "shay@gmail.com"),
+  tech_stack: TechStack.find_by(name: "C++"),
+  experience: "Intermediate",
+  objective: "Want to expand my developing skills"
+},
+{
+  user: User.find_by(email: "kiara@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Beginner",
+  objective: "Want to expand my developing skills"
+},
+{
+  user: User.find_by(email: "ian@gmail.com"),
+  tech_stack: TechStack.find_by(name: "Ruby"),
+  experience: "Advanced",
+  objective: "What to connect and help developers"
+},
+{
+  user: User.find_by(email: "mick@gmail.com"),
+  tech_stack: TechStack.find_by(name: "Ruby"),
+  experience: "Advanced",
+  objective: "What to help junior developers get into the tech world"
+},
+{
+  user: User.find_by(email: "ash@gmail.com"),
+  tech_stack: TechStack.find_by(name: "Python"),
+  experience: "Advanced",
+  objective: "Wanting to help people learn tech languages"
+},
+{
+  user: User.find_by(email: "maia@gmail.com"),
+  tech_stack: TechStack.find_by(name: "C++"),
+  experience: "Beginner",
+  objective: "Looking for someone to practice code"
 }]
 
 UserSelection.create!(user_selections_list)
@@ -370,7 +526,7 @@ puts "Creating Posts.."
 posts_list = [{
   title: "Learn JavaScript",
   description: "Anyone want to learn JavaScript?",
-  user: User.find_by(email: "john@gmail.com"),
+  user: User.find_by(email: "miles@gmail.com"),
   date: Date.today
 },
 {
@@ -378,8 +534,70 @@ posts_list = [{
   description: "Anyone want to learn Ruby?",
   user: User.find_by(email: "ryan@gmail.com"),
   date: Date.today
+},
+{
+  title: "Build a project",
+  description: "I am looking for developers to help me create a project",
+  user: User.find_by(email: "shay@gmail.com"),
+  date: Date.today
+  },
+{
+  title: "Hiring Juniors",
+  description: "Hello, my company is looking to hire 2 x Junior developers with a basic understanding of Python",
+  user: User.find_by(email: "john@gmail.com"),
+  date: Date.today
+},
+{
+  title: "Any junior developers want to build a project for their portfolio",
+  description: "I recently finished a bootcamp and am looking for other developers to build projects",
+  user: User.find_by(email: "ryan@gmail.com"),
+  date: Date.today
+},
+{
+  title: "Join CodeWars",
+  description: "Hello everyone, looking for some friends to play CodeWars with",
+  user: User.find_by(email: "sam@gmail.com"),
+  date: Date.today
+},
+{
+  title: "Hiring mid-level developers at Zip",
+  description: "Hello everyone, Zip is looking at hiring more developers.",
+  user: User.find_by(email: "lily@gmail.com"),
+  date: Date.today
+},
+{
+  title: "Want to learn how to network?",
+  description: "Hello, I was wondering if anyone was interested on learning how they can develop their networking skills?",
+  user: User.find_by(email: "ian@gmail.com"),
+  date: Date.today
+},
+{
+  title: "Want to learn how to write clean code?",
+  description: "Hello, I was wondering if anyone was interested on learning how they can improve their coding skills?",
+  user: User.find_by(email: "ash@gmail.com"),
+  date: Date.today
+},
+{
+  title: "Looking for other students learning to code",
+  description: "Hi everyone, my name is Maia and I am a first year student, if anyone one else is learning to code and what to learn together please message me or reply to this post",
+  user: User.find_by(email: "maia@gmail.com"),
+  date: Date.today
 }]
 Post.create!(posts_list)
 puts "Created #{Post.count} posts!"
 
+puts "Creating matches"
 
+matchs_list = [{
+  matchee: User.find_by(email: "ryan@gmail.com"),
+  matcher: User.find_by(email: "angus@gmail.com"),
+  status: 1
+},
+{
+  matchee: User.find_by(email: "ryan@gmail.com"),
+  matcher: User.find_by(email: "lily@gmail.com"),
+  status: 1
+}]
+
+Match.create!(matchs_list)
+puts "Created #{Match.count} matches!"
