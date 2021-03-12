@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_060452) do
+ActiveRecord::Schema.define(version: 2021_03_10_062834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,27 +47,6 @@ ActiveRecord::Schema.define(version: 2021_03_11_060452) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "group_members", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "group_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["group_id"], name: "index_group_members_on_group_id"
-    t.index ["user_id"], name: "index_group_members_on_user_id"
-  end
-
-  create_table "group_messages", force: :cascade do |t|
-    t.string "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "groups", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "match_messages", force: :cascade do |t|
     t.string "content"
     t.bigint "match_id", null: false
@@ -82,8 +61,6 @@ ActiveRecord::Schema.define(version: 2021_03_11_060452) do
     t.bigint "matcher_id", null: false
     t.bigint "matchee_id", null: false
     t.integer "status"
-    t.integer "matcher_status"
-    t.integer "matchee_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["matchee_id"], name: "index_matches_on_matchee_id"
@@ -91,12 +68,12 @@ ActiveRecord::Schema.define(version: 2021_03_11_060452) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.string "description"
     t.date "date"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -143,10 +120,10 @@ ActiveRecord::Schema.define(version: 2021_03_11_060452) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "group_members", "groups"
-  add_foreign_key "group_members", "users"
   add_foreign_key "match_messages", "matches"
   add_foreign_key "match_messages", "users"
+  add_foreign_key "matches", "users", column: "matchee_id"
+  add_foreign_key "matches", "users", column: "matcher_id"
   add_foreign_key "posts", "users"
   add_foreign_key "user_selections", "tech_stacks"
   add_foreign_key "user_selections", "users"
