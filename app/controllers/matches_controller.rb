@@ -17,7 +17,7 @@ class MatchesController < ApplicationController
     end
   end
 
-  def matches
+  def show
     @matches = current_user.matches
   end
 
@@ -31,11 +31,5 @@ class MatchesController < ApplicationController
     params.require(:match).permit(:matchee_id, :status)
   end
 end
-
-# Today
-#Want to understand how to finish the create method
-#make sure that already matched/liked/rejected people don't appear in list of possibles
-#send confirmed matches to match/Show
-#send alert when a match is confirmed but don't navigate off the page
 #we want to create a chat
 
