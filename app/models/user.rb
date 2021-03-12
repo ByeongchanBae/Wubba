@@ -7,16 +7,23 @@ class User < ApplicationRecord
 
   has_many :matchers, class_name: "Match", foreign_key: "matcher_id"
   has_many :matchees, class_name: "Match", foreign_key: "matchee_id"
-  has_many :matches
-
+  has_many :posts, dependent: :destroy
 
   def possibles
-  potential_matches = tech_stacks.map do |tech_stack|
+    potential_matches = tech_stacks.map do |tech_stack|
     tech_stack.users
     end
-  flat_matches = potential_matches.flatten
-  unique_matches = flat_matches.uniq
-  unique_matches.reject { |user| user == self }
+    flat_matches = potential_matches.flatten
+    unique_matches = flat_matches.uniq
+    without_me = unique_matches.reject { |user| user == self }
+    already_matched = without_me.reject do |user|
+      Match.find_by(matcher: user, matchee: self) || Match.find_by(matcher: self, matchee: user)
+    end
+    already_matched
+  end
+
+  def matches
+   (matchers.where(status: 2) + matchees.where(status: 2)).uniq
   end
 
 end
