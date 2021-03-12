@@ -1,5 +1,6 @@
 puts "Cleaning database..."
 
+MatchMessage.destroy_all
 Match.destroy_all
 Post.destroy_all
 UserSelection.destroy_all
