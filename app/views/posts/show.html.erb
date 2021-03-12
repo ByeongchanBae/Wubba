@@ -1,7 +1,9 @@
 <h1> Posts </h1>
-
+<div class="card-trip">
 <h2> <%= @post.title %> </h2>
 <p> <%= @post.description %> </p>
+<p> Date posted: <%= @post.date %> </p>
+<p> Posted by: <%= @post.user.first_name %> <%= @post.user.last_name %> </p>
 
 <% @post.comments.each do |comment| %>
 <p> <%= comment.reply %></p>
@@ -11,7 +13,7 @@
 <%= f.input :reply %>
 <%= f.submit %>
 <% end %>
-
+</div>
 <% if current_user == @post.user %>
   <%= link_to 'Edit', edit_post_path(@post), class:"btn btn-secondary" %>
   <%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to remove this post?'}, class:"btn btn-danger" %>
