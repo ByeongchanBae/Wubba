@@ -1,11 +1,11 @@
 class MatchMessagesController < ApplicationController
   def create
-    @matches = Match.find(params[:match_id])
+    @match = Match.find(params[:match_id])
     @match_message = MatchMessage.new(message_params)
-    @match_message.match = @matches
+    @match_message.match = @match
     @match_message.user = current_user
     if @match_message.save
-      redirect_to match_path(@match, anchor: "message-#{@message.id}")
+      redirect_to match_path(@match)
     else
       render "match/show"
     end
@@ -15,6 +15,6 @@ class MatchMessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:match_message).permit(:content, :match)
+    params.require(:match_message).permit(:content)
   end
 end
