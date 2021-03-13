@@ -14,13 +14,11 @@ class User < ApplicationRecord
     tech_stack.users
     end
 
-
-
     flat_matches = potential_matches.flatten
     unique_matches = flat_matches.uniq
     without_me = unique_matches.reject { |user| user == self }
     already_matched = without_me.reject do |user|
-      Match.find_by(matcher: self, matchee: user)
+      Match.find_by(matcher: self, matchee: user) || Match.find_by(matchee: self, matcher: user)
     end
     already_matched
     # users_w_tech_tack = User.where(tech_stack: self.tech_stack)

@@ -5,9 +5,13 @@ class MatchMessagesController < ApplicationController
     @match_message.match = @match
     @match_message.user = current_user
     if @match_message.save
-      redirect_to match_path(@match)
+      ChatroomChannel.broadcast_to(
+      @match,
+      render_to_string(partial: "message", locals: { message: @match_message })
+    )
+      redirect_to match_path(@match, anchor: "message-#{@match_message.id}")
     else
-      render "match/show"
+      render "matches/show"
     end
   end
 
