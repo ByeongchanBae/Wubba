@@ -15,10 +15,17 @@
           <%= link_to "Home", dashboard_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Matches", new_user_selection_path, class: "nav-link" %>
+
+          <!-- we want this to go to matches/(last matched id) -->
+          <% if current_user.matches.last.present? %>
+          <%= link_to "Matches", match_path(current_user.matches.last), class: "nav-link" %>
+          <% end %>
         </li>
         <li class="nav-item">
           <%= link_to "Posts", posts_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Search partner", new_user_selection_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>

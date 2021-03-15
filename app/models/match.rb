@@ -6,6 +6,6 @@ class Match < ApplicationRecord
   validates_uniqueness_of :matchee_id, scope: :matcher_id
 
   def partner(current_user)
-    current_user == matcher ? matchee : matcher
+  current_user == matcher ? matchee : matcher
   end
 end
