@@ -1,15 +1,28 @@
 <div class="card-white">
-  <h1> Your profile </h1>
-  <div class="card-trip">
+  <h1> <%= @user.first_name %> <%= @user.last_name %>'s profile </h1>
+  <div class="profile">
     <% if @user.avatar.attached? %>
     <%= cl_image_tag(@user.avatar.key, :transformation=>[
-      {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},
-      {:width=>150, :crop=>"scale"}
+      {:width=>400, :height=>400, :gravity=>"face", :crop=>"crop"},
+      {:width=>300, :crop=>"scale"}
       ]) %>
       <% end %>
-      <h2> <%= @user.first_name %> <%= @user.last_name %> </h2>
-      <p> Location: <%= @user.city %>, <%= @user.country %> </p>
-      <p> Education: <%= @user.education %> </p>
-      <p> Bootcamp? <%= @user.bootcamp %> </p>
+      <h2> <%= @user.first_name %> </h2>
+    <div class="cards">
+      <div class="box">
+      <p> Location: <%= @user.city %>, <%= @user.country %></p>
+      </div>
+      <div class="box">
+      <p> Age <%= @user.age %></p>
+      </div>
+      <div class="box">
+      <p> City <%= @user.city %></p>
+      </div>
+      <div class="box">
+      <p> Experience <%= @user.experience_level %></p>
+      </div>
+    </div>
   </div>
 </div>
+
+

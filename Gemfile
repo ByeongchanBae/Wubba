@@ -35,6 +35,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
+gem 'country_select'
 
 group :development, :test do
   gem 'pry-byebug'

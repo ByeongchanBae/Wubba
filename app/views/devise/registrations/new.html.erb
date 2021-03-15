@@ -24,12 +24,16 @@
     <%= f.input :city,
                 required: true,
                 input_html: { autocomplete: "city" } %>
+    <%= f.input :country,
+                required: true,
+                input_html: { autocomplete: "country" } %>
     <%= f.input :bootcamp,
                 required: false,
                 input_html: { autocomplete: "bootcamp" } %>
     <%= f.input :education,
                 required: true,
                 input_html: { autocomplete: "education" } %>
+    <%= f.input :avatar, as: :file %>
   </div>
 
   <div class="form-actions">
