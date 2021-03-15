@@ -15,6 +15,21 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :first_name,
+                required: true,
+                input_html: { autocomplete: "first_name" } %>
+    <%= f.input :last_name,
+                required: true,
+                input_html: { autocomplete: "last_name" } %>
+    <%= f.input :city,
+                required: true,
+                input_html: { autocomplete: "city" } %>
+    <%= f.input :bootcamp,
+                required: false,
+                input_html: { autocomplete: "bootcamp" } %>
+    <%= f.input :education,
+                required: true,
+                input_html: { autocomplete: "education" } %>
   </div>
 
   <div class="form-actions">
