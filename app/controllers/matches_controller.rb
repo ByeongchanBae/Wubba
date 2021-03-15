@@ -1,5 +1,4 @@
 class MatchesController < ApplicationController
-# i've had a crack at task 2
   # before_action :remove_possibles, only: (:index)
 
     def create
@@ -34,7 +33,8 @@ class MatchesController < ApplicationController
   private
 
   # def remove_possibles
-  #     @possibles.delete_all
+  #   @possibles = current_user.possibles
+  #   @possibles.destroy
   # end
 
   def match_params
