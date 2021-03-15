@@ -1,5 +1,8 @@
 class MatchesController < ApplicationController
-  def create
+# i've had a crack at task 2
+  # before_action :remove_possibles, only: (:index)
+
+    def create
     @matchee = User.find(match_params[:matchee_id].to_i)
     @my_like = Match.where(matcher: current_user, matchee: @matchee)
     @likes_me = Match.where(matchee: current_user, matcher: @matchee)
@@ -19,7 +22,7 @@ class MatchesController < ApplicationController
   end
 
   def show
-    @matches = current_user.matches
+    @matches = current_user.matches.sort_by(&:id).reverse
     @match = Match.find(params[:id])
     @match_message = MatchMessage.new
   end
@@ -30,9 +33,12 @@ class MatchesController < ApplicationController
 
   private
 
+  # def remove_possibles
+  #     @possibles.delete_all
+  # end
+
   def match_params
-    params.require(:match).permit(:matchee_id, :status)
+    params.require(:match).permit(:matchee_id, :status, :tech_stack_id)
   end
 end
-#we want to create a chat
 
