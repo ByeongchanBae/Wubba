@@ -1,6 +1,4 @@
 class MatchesController < ApplicationController
-  # before_action :remove_possibles, only: (:index)
-
     def create
     @matchee = User.find(match_params[:matchee_id].to_i)
     @my_like = Match.where(matcher: current_user, matchee: @matchee)
@@ -10,13 +8,20 @@ class MatchesController < ApplicationController
     if @matches.length >= 1
       @match = @matches.first
       @match.status = 2
-      @match.save
-      flash.alert = "You matched with #{@matchee.first_name}"
-      redirect_to match_path(@match)
+      if @match.save
+        flash.alert = "You matched with #{@matchee.first_name}"
+        redirect_to match_path(@match)
+      else
+        render 'posts/show'
+      end
     else
       # create_new_match
       @match = Match.new(matchee: @matchee, matcher: current_user, status: match_params[:status])
-      @match.save
+      if @match.save
+        redirect_to posts_path
+      else
+        render 'posts/show'
+      end
     end
   end
 
@@ -31,11 +36,6 @@ class MatchesController < ApplicationController
   end
 
   private
-
-  # def remove_possibles
-  #   @possibles = current_user.possibles
-  #   @possibles.destroy
-  # end
 
   def match_params
     params.require(:match).permit(:matchee_id, :status, :tech_stack_id)
