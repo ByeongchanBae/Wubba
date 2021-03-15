@@ -1,0 +1,26 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 16px;
+  flex-grow: 1;
+}
+
+.profile {
+  background-color: white;
+  padding: 40px;
+  border-radius: 4px;
+  margin: 20px 0px;
+}
+
+.profile .h2 {
+  text-align: left;
+}
+
+.box {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: white;
+}

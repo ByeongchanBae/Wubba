@@ -1,4 +1,4 @@
-class UserSelectionsController < ApplicationController
+ class UserSelectionsController < ApplicationController
 
   before_action :find_selection, only: [:show, :edit, :update, :destroy]
 

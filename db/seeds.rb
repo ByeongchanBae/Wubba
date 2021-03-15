@@ -587,18 +587,23 @@ posts_list = [{
 Post.create!(posts_list)
 puts "Created #{Post.count} posts!"
 
-puts "Creating matches"
+# puts "Creating matches"
 
-matchs_list = [{
-  matchee: User.find_by(email: "ryan@gmail.com"),
-  matcher: User.find_by(email: "angus@gmail.com"),
-  status: 1
-},
-{
-  matchee: User.find_by(email: "ryan@gmail.com"),
-  matcher: User.find_by(email: "lily@gmail.com"),
-  status: 1
-}]
+# matchs_list = [{
+#   matchee: User.find_by(email: "ryan@gmail.com"),
+#   matcher: User.find_by(email: "angus@gmail.com"),
+#   status: 1
+# },
+# {
+#   matchee: User.find_by(email: "ryan@gmail.com"),
+#   matcher: User.find_by(email: "lily@gmail.com"),
+#   status: 1
+# },
+# {
+#   matchee: User.find_by(email: "ryan@gmail.com"),
+#   matcher: User.find_by(email: "lily@gmail.com"),
+#   status: 1
+# }]
 
-Match.create!(matchs_list)
-puts "Created #{Match.count} matches!"
+# Match.create!(matchs_list)
+# puts "Created #{Match.count} matches!"
