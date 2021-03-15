@@ -23,6 +23,11 @@ class User < ApplicationRecord
     end
   end
 
+
+  def matches
+    Match.where(status: 2, matchee: self).or(Match.where(status: 2, matcher: self)).uniq
+  end
+
   private
 
     def self.possibles(potential_matches, current_user)
@@ -31,9 +36,5 @@ class User < ApplicationRecord
       Match.find_by(matcher: current_user, matchee: user) || Match.find_by(matchee: current_user, matcher: user, status: [0, 2])
     end
     already_matched
-  end
-
-  def matches
-    Match.where(status: 2, matchee: self).or(Match.where(status: 2, matcher: self)).uniq
   end
 end
