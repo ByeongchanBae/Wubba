@@ -6,6 +6,8 @@ const initNotificationCable = () => {
     consumer.subscriptions.create({ channel: "NotificationChannel", user_id: currentUserId }, {
       received(data) {
         notificationsContainer.insertAdjacentHTML('afterBegin', data)
+        // PUT NOTIFICATION COUNT
+        //  ADD EVENT LISTENER
       },
       connected() {
       }
