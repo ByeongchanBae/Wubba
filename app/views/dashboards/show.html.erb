@@ -1,29 +1,51 @@
-<div class="card-white">
-  <h1> <%= @user.first_name %> <%= @user.last_name %>'s profile </h1>
-  <div class="profile">
-    <% if @user.avatar.attached? %>
-    <%= cl_image_tag(@user.avatar.key, :transformation=>[
-      {:width=>400, :height=>400, :gravity=>"face", :crop=>"crop"},
-      {:width=>300, :crop=>"scale"}
-      ]) %>
-      <% end %>
-      <h2> <%= @user.first_name %> </h2>
-    <div class="cards">
-      <div class="box">
-      <p> Location: <%= @user.city %>, <%= @user.country %></p>
-      </div>
-      <div class="box">
-      <p> Age <%= @user.age %></p>
-      </div>
-      <div class="box">
-      <p> City <%= @user.city %></p>
-      </div>
-      <div class="box">
-      <p> Experience <%= @user.experience_level %></p>
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+<!-- requests -->
+  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="card-white">
+      <h1> Profile </h1>
+      <div class="profile">
+        <% if @user.avatar.attached? %>
+        <%= cl_image_tag(@user.avatar.key, class: "avatarimg", :transformation=>[
+          {:width=>400, :height=>400, :gravity=>"face", :crop=>"crop"},
+          {:width=>350, :crop=>"scale"}
+          ]) %>
+          <% end %>
+          <div class="name">
+          <h2> <%= @user.first_name %> </h2>
+          </div>
+          <div class="cards">
+            <div class="box">
+              <h5> Location: </h5>
+              <p><%= @user.city %>, <%= @user.country %></p>
+            </div>
+            <div class="box">
+              <h5> Age </h5>
+              <p> <%= @user.age %></p>
+            </div>
+            <div class="box">
+              <h5> City </h5>
+              <p> <%= @user.city %></p>
+            </div>
+            <div class="box">
+              <h5> Experience </h5>
+              <p> <%= @user.experience_level %></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
 
 
 <h1>Notifications#index</h1>
