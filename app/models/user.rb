@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :matchers, class_name: "Match", foreign_key: "matcher_id"
   has_many :matchees, class_name: "Match", foreign_key: "matchee_id"
   has_many :posts, dependent: :destroy
+  has_many :notifications, foreign_key: :recipient_id
 
 
   def matches
@@ -30,10 +31,9 @@ class User < ApplicationRecord
       Match.find_by(matcher: current_user, matchee: user) || Match.find_by(matchee: current_user, matcher: user, status: [0, 2])
     end
     already_matched
-    # users_w_tech_tack = User.where(tech_stack: self.tech_stack)
+  end
 
-    # matches = Match.where.not(matcher: self)
-    # matches = matches.where.not(status: 2)
-    # matches.select{ |match| match.matcher.tech_stacks.include?(self.tech_stacks) }
+  def matches
+    Match.where(status: 2, matchee: self).or(Match.where(status: 2, matcher: self)).uniq
   end
 end
