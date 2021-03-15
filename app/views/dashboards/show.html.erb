@@ -48,3 +48,10 @@
 
 
 
+<h1>Notifications#index</h1>
+<p>Find me in app/views/notifications/index.html.erb</p>
+<div id="notifications">
+  <% @notifications.each do |notification| %>
+  <%= render 'notifications/notification', notification: notification %>
+  <% end %>
+</div>
