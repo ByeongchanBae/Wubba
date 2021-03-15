@@ -1,4 +1,13 @@
+<%= form_tag(matches_path, method: :get) do %>
+  <%#= text_field_tag(:search, params[:search]) %>
 
+  <%= select_tag "search", options_from_collection_for_select(current_user.tech_stacks.uniq, "id", "name") %>
+
+  <%= submit_tag ("Search") %>
+<% end %>
+
+
+<% if @possibles %>
   <ul id="slides">
     <% @possibles.each_with_index do |possible, i| %>
     <div class="slide <%= 'showing' if i == 0 %>" data-id="<%= possible.id %>">
@@ -12,13 +21,15 @@
     <% end %>
   </ul>
 
+
 <div class="d-flex flex-column align-items-center">
   <div id="slide-controls">
     <span class="controls" id="decline"><i class="fa fa-times fa-2x"></i></span>
     <span class="controls" id="approve"><i class="fa fa-check fa-2x"></i></span>
   </div>
 </div>
-
-
+<% else %>
+<h5>You currently do not have any tech stacks selected or there are no current matches according to your tech stack. If you need to update your preferences, head to http://localhost:3000/user_selections/new to add a new tech stack!</h5>
+<% end %>
 
 

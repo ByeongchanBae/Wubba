@@ -9,15 +9,25 @@ class User < ApplicationRecord
   has_many :matchees, class_name: "Match", foreign_key: "matchee_id"
   has_many :posts, dependent: :destroy
 
-  def possibles
-    potential_matches = tech_stacks.map do |tech_stack|
-    tech_stack.users
+
+  def matches
+   (matchers.where(status: 2) + matchees.where(status: 2)).uniq
+  end
+
+# a search is a tech_stack
+  def self.search(search, current_user)
+    if search
+      tech_stack = TechStack.find(search)
+      possibles(tech_stack.users, current_user)
     end
-    flat_matches = potential_matches.flatten
-    unique_matches = flat_matches.uniq
-    without_me = unique_matches.reject { |user| user == self }
+  end
+
+  private
+
+    def self.possibles(potential_matches, current_user)
+    without_me = potential_matches.uniq.reject { |user| user == current_user }
     already_matched = without_me.reject do |user|
-      Match.find_by(matcher: self, matchee: user) || Match.find_by(matchee: self, matcher: user, status: [0, 2])
+      Match.find_by(matcher: current_user, matchee: user) || Match.find_by(matchee: current_user, matcher: user, status: [0, 2])
     end
     already_matched
     # users_w_tech_tack = User.where(tech_stack: self.tech_stack)
@@ -26,9 +36,4 @@ class User < ApplicationRecord
     # matches = matches.where.not(status: 2)
     # matches.select{ |match| match.matcher.tech_stacks.include?(self.tech_stacks) }
   end
-
-  def matches
-   (matchers.where(status: 2) + matchees.where(status: 2)).uniq
-  end
-
 end

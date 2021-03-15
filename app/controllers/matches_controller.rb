@@ -28,7 +28,7 @@ class MatchesController < ApplicationController
   end
 
   def index
-    @possibles = current_user.possibles
+    @possibles = User.search(params[:search], current_user)
   end
 
   private
@@ -38,7 +38,7 @@ class MatchesController < ApplicationController
   # end
 
   def match_params
-    params.require(:match).permit(:matchee_id, :status, :tech_stack_id)
+    params.require(:match).permit(:matchee_id, :status, :tech_stack_id, :search)
   end
 end
 
