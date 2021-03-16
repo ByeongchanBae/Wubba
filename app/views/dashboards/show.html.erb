@@ -1,4 +1,4 @@
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tab8list">
   <li class="nav-item" role="presentation">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
   </li>
@@ -8,13 +8,14 @@
 </ul>
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-    <h1>Notifications#index</h1>
-    <p>Find me in app/views/notifications/index.html.erb</p>
-    <div id="notifications">
-      <% @notifications.each do |notification| %>
-      <%= render 'notifications/notification', notification: notification %>
-      <% end %>
-    </div>
+<!-- requests -->
+<h1>Notifications#index</h1>
+<p>Find me in app/views/notifications/index.html.erb</p>
+<div id="notifications">
+  <% @notifications.each do |notification| %>
+  <%= render 'notifications/notification', notification: notification %>
+  <% end %>
+</div>
   </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
     <div class="card-white">
@@ -51,7 +52,3 @@
       </div>
     </div>
   </div>
-
-
-
-
