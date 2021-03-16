@@ -9,7 +9,6 @@ const initNotificationCable = () => {
         // PUT NOTIFICATION COUNT
         //  ADD EVENT LISTENER
         // update the bell button to 2 document.queyselector bell add classlist
-
       },
       connected() {
       }

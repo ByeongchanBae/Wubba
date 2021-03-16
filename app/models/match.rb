@@ -8,7 +8,7 @@ class Match < ApplicationRecord
   after_update :create_notifications
 
   def partner(current_user)
-  current_user == matcher ? matchee : matcher
+    current_user == matcher ? matchee : matcher
   end
 
   private

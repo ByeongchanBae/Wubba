@@ -22,9 +22,9 @@ class MatchesController < ApplicationController
         respond_to do |format|
           format.html { redirect_to match_url(@match) }
           format.js
+        end
       end
     end
-   end
   end
 
   def show
@@ -38,6 +38,8 @@ class MatchesController < ApplicationController
   end
 
   private
+
+
 
   def match_params
     params.require(:match).permit(:matchee_id, :status, :tech_stack_id, :search)
