@@ -67,6 +67,7 @@
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  padding-left: 25px;
 }
 
 .card-product img {
@@ -93,6 +94,11 @@
   padding: 16px;
 }
 
+.card-product-infos {
+  padding-left: 25px;
+  padding-right: 25px;
+}t
+
 .card-product-infos p {
   font-size: 12px;
   line-height: 1.4;
@@ -107,6 +113,10 @@
   margin: 0;
 }
 
+.card-product-infos a {
+  color: black;
+}
+
 .card-product-all {
   overflow: hidden;
   height: 120px;
@@ -119,4 +129,12 @@
   height: 40%;
   width: 50px;
   border-radius: 50%;
+}
+
+.fa-bell:before {
+    color: white;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #FF385C;
 }
