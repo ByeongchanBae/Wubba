@@ -20,11 +20,11 @@ class MatchesController < ApplicationController
       if @match.matchee != current_user
         @match.save
         respond_to do |format|
-          format.html { redirect_to match_url(@match) }
+          format.html { redirect_to posts_url }
           format.js
+        end
       end
     end
-   end
   end
 
   def show
@@ -38,6 +38,8 @@ class MatchesController < ApplicationController
   end
 
   private
+
+
 
   def match_params
     params.require(:match).permit(:matchee_id, :status, :tech_stack_id, :search)
