@@ -12,7 +12,6 @@
     <% @possibles.each_with_index do |possible, i| %>
     <div class="slide <%= 'showing' if i == 0 %>" data-id="<%= possible.id %>">
       <div class="card-white">
-    <h5 class="d-flex justify-content-center" id="matches-tech_stack"> Matches for: <%= current_user.user_selections.last.tech_stack.name %> </h5>
     <div class="profile">
       <% if possible.avatar.attached? %>
       <%= cl_image_tag(possible.avatar.key, class: "avatarimg", :transformation=>[

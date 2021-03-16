@@ -3,7 +3,7 @@
   <% @posts.each do |post| %>
   <div class="card-product-all">
     <!-- change to user avatar -->
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <%= cl_image_tag post.user.avatar.key, class:"image-show" %>
     <div class="card-product-infos">
       <h2> <%= link_to post.title, post_path(post) %> </h2>
       <p> Posted by: <%= post.user.first_name %> <%= post.user.last_name %> </p>
