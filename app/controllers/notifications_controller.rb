@@ -3,6 +3,7 @@ class NotificationsController < ApplicationController
   before_action :set_notifications
 
   def index
+
   end
 
   private
