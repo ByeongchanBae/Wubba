@@ -42,16 +42,11 @@
         </div>
       </div>
     </div>
-      <%= link_to "Create match", matches_path(match: { matchee_id: possible.id, status: 1 } ), method: :post, class: "btn btn-primary" %>
-      <%= link_to "Decline match", matches_path(match: { matchee_id: possible.id, status: 0 } ), method: :post, class: "btn btn-primary" %>
+      <%= link_to "Like", matches_path(match: { matchee_id: possible.id, status: 1 } ), method: :post, class: "btn btn-primary" %>
+      <%= link_to "Reject", matches_path(match: { matchee_id: possible.id, status: 0 } ), method: :post, class: "btn btn-primary" %>
     </div>
     <% end %>
   </ul>
-
-
-
-
-
 
 
 <div class="d-flex flex-column align-items-center">

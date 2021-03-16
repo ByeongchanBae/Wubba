@@ -18,7 +18,7 @@ class MatchesController < ApplicationController
     # create_new_match
    @match = Match.new(matchee: @matchee, matcher: current_user, status: match_params[:status])
     if @match.save
-      redirect_to posts_path
+      redirect_to matches_path
     else
       render 'posts/show'
     end
