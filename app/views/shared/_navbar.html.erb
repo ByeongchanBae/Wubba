@@ -3,7 +3,10 @@
     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
     <%= link_to dashboard_path do %>
-   <i class="far fa-bell"></i>
+     <i class="far fa-bell"></i>
+     <% if user_signed_in? %>
+       <span class="badge badge-danger js-notification-count"><%= current_user.notifications.unread.count %></span>
+     <% end %>
     <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
