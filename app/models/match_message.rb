@@ -8,7 +8,7 @@ class MatchMessage < ApplicationRecord
   private
 
   def create_notifications
-    notification = Notification.new(recipient: self.match.matchee, actor: self.user, action: 'messaged', notifiable: self)
+    notification = Notification.new(recipient: self.user == self.match.matchee ? self.match.matcher : self.match.matchee, actor: self.user, action: 'messaged', notifiable: self)
      ActionCable.server.broadcast(
         "notifications:#{notification.recipient_id}",
         ActionController::Base.new().render_to_string(partial: "notifications/notification", locals: { notification: notification })
