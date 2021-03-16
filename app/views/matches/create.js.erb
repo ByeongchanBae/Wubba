@@ -1,0 +1,7 @@
+var activeSlide = document.querySelector('.showing');
+var nextSlide =  activeSlide.nextElementSibling;
+
+activeSlide.classList.remove('showing');
+if (nextSlide) {
+  nextSlide.classList.add('showing');
+}
