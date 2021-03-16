@@ -1,9 +1,10 @@
 <%= form_tag(matches_path, method: :get) do %>
+<%#= form_tag(matches_path, method: :get, id: 'search-form') do %>
   <%#= text_field_tag(:search, params[:search]) %>
 
   <%= select_tag "search", options_from_collection_for_select(current_user.tech_stacks.uniq, "id", "name") %>
 
-  <%= submit_tag ("Search") %>
+  <%= submit_tag ("Search"), id: 'search-submit-button' %>
 <% end %>
 
 <% if @possibles %>
@@ -11,7 +12,7 @@
     <% @possibles.each_with_index do |possible, i| %>
     <div class="slide <%= 'showing' if i == 0 %>" data-id="<%= possible.id %>">
       <div class="card-white">
-    <h1> Profile </h1>
+    <h5 class="d-flex justify-content-center" id="matches-tech_stack"> Matches for: <%= current_user.user_selections.last.tech_stack.name %> </h5>
     <div class="profile">
       <% if possible.avatar.attached? %>
       <%= cl_image_tag(possible.avatar.key, class: "avatarimg", :transformation=>[
@@ -24,20 +25,20 @@
         </div>
         <div class="cards">
           <div class="box">
-            <h5> Location: </h5>
-            <p><%= possible.first_name %></p>
+            <h5> Age: </h5>
+            <p><%= possible.age %></p>
           </div>
           <div class="box">
-            <h5> Age </h5>
-            <p> <%= possible.first_name %></p>
-          </div>
-          <div class="box">
-            <h5> City </h5>
-            <p> <%= possible.first_name %></p>
+            <h5> Location </h5>
+            <p> <%= possible.city %>, <%= possible.country %></p>
           </div>
           <div class="box">
             <h5> Experience </h5>
-            <p> <%= possible.first_name %></p>
+            <p> <%= possible.user_selections.last.experience %></p>
+          </div>
+          <div class="box">
+            <h5> Objective </h5>
+            <p> <%= possible.user_selections.last.objective %></p>
           </div>
         </div>
       </div>
