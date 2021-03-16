@@ -4,6 +4,7 @@
     <% match = Match.find(notification.notifiable_id) %>
     <% if match.status == 1 %>
       <%= link_to "Accept Wubba", "matches?match%5Bmatchee_id%5D=#{notification.actor.id}&match%5Bstatus%5D=2", method: :post, class: "btn btn-primary" %>
+      <%= link_to "Reject", "matches?match%5Bmatchee_id%5D=#{notification.actor.id}&match%5Bstatus%5D=0", method: :post, remote: true, class: "btn btn-primary" %>
     <% end %>
   <% elsif notification.action == 'commented' %>
     <p> <%= notification.actor.first_name %> <%= notification.action %> on your post </p>

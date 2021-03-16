@@ -1,32 +1,36 @@
-<div class="container-fluid ">
-  <div class=row>
-    <div class="col-3">
-      <% @matches.each do |match|%>
-      <%= link_to match_path(match) do %>
-      <div class="card-chat">
-         <!-- i want the most recent match eithe by max id or most recent time. I think finding the biggest id and reversing the order -->
-        <%= cl_image_tag match.partner(current_user).avatar.key, :width => 250, :crop => "pad", class:"image-show" %>
-        <p><%= match.partner(current_user).first_name %></p>
-      </div>
-      <% end %>
-      <% end %>
+<div class="container-chat">
+
+  <div class="carousel">
+    <% @matches.each do |match|%>
+    <%= link_to match_path(match) do %>
+    <div class="card-chat d-flex flex-column">
+      <%= cl_image_tag match.partner(current_user).avatar.key, class:"image-show" %>
+      <p><%= match.partner(current_user).first_name %></p>
     </div>
-    <div class="col-9">
-      <% if @match.status == 2 %>
-        <div id="messages" data-match-id="<%= @match.id %>">
-          <% @match.match_messages.each do |message| %>
-            <%= render 'match_messages/match_message', message: message %>
-          <% end %>
-        </div>
-          <div class="chat-box">
-          <%= simple_form_for [ @match, @match_message ], remote: true do |f| %>
-          <%= f.input :content, label: false, placeholder: "Message #{@match.partner(current_user).first_name}" %>
-          <%= f.submit "Send", class: "btn-chat btn-primary" %>
-          <% end %>
-      <% else %>
-          <p>This match does not exist yet</p>
-      <% end %>
-      </div>
-    </div>
+    <% end %>
+    <% end %>
+    <!-- carousel end below -->
   </div>
+
+  <div class="chat-page">
+    <% if @match.status == 2 %>
+    <div id="messages" data-match-id="<%= @match.id %>">
+     <% @match.match_messages.each do |message| %>
+     <%= render 'match_messages/match_message', message: message %>
+     <% end %>
+     <% else %>
+     <p>This match does not exist yet</p>
+     <% end %>
+   </div>
+   <!-- chat-page end below -->
+ </div>
+
+ <div class="chat-box">
+   <%= simple_form_for [ @match, @match_message ], remote: true do |f| %>
+   <%= f.input :content, label: false, placeholder: "Message #{@match.partner(current_user).first_name}" %>
+   <%= f.submit "Send", class: "btn-chat btn-primary" %>
+   <% end %>
+   <!-- chat box end below -->
+ </div>
+ <!-- container end below -->
 </div>

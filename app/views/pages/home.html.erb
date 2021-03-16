@@ -5,7 +5,10 @@
     <!-- change font -->
     <p style="color: black; font-size: 36px; text-align: center;">Learning is a series of partnerships!</p>
 <!--     <a class="btn-primary" href="#">Search Threads</a> -->
+<% if user_signed_in? %>
+<% else %>
 <%= link_to "LOGIN", new_user_session_path, class: "btn-primary sign" %>
 <%= link_to "SIGN UP", new_user_registration_path, class:"btn-primary sign" %>
+<% end %>
   </div>
 </div>
