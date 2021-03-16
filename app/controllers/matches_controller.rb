@@ -12,15 +12,14 @@ class MatchesController < ApplicationController
       flash.alert = "You matched with #{@matchee.first_name}"
       redirect_to match_path(@match)
     else
-      render 'posts/show'
+      render 'matches_path'
     end
    else
     # create_new_match
-   @match = Match.new(matchee: @matchee, matcher: current_user, status: match_params[:status])
-    if @match.save
-      redirect_to posts_path
-    else
-      render 'posts/show'
+    @match = Match.new(matchee: @matchee, matcher: current_user, status: match_params[:status])
+    if @match.matcher != current_user
+      @match.save
+      flash.alert = "You liked #{@matchee.first_name}"
     end
    end
   end
