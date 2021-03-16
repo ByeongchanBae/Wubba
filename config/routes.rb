@@ -19,6 +19,5 @@ Rails.application.routes.draw do
   end
   resources :comments, only: [ :show, :edit, :update, :destroy ]
   resources :notifications, only: [:index]
-  resource :dashboard, only: [:destroy]
 end
 
