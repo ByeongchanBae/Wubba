@@ -102,3 +102,17 @@
   font-weight: bold;
   margin: 0;
 }
+
+.card-product-all {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+.card-product-all img {
+    height: 50%;
+    width: 60px;
+    border-radius: 50%;
+}
