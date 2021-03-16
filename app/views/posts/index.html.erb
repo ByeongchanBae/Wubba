@@ -1,13 +1,13 @@
 <% @posts.each do |post| %>
   <div class="card-trip">
-  <h3> <%= link_to post.title, post_path(post) %> </h3>
+    <h3> <%= link_to post.title, post_path(post) %> </h3>
     <div class="card-white">
-  <%= post.description %>
-    <div class="date">
-  <p> Date posted: <%= post.date %> </p>
-  <p> Posted by: <%= post.user.first_name %> <%= post.user.last_name %> </p>
+      <%= post.description %>
+      <div class="date">
+        <p> Date posted: <%= post.date %> </p>
+        <p> Posted by: <%= post.user.first_name %> <%= post.user.last_name %> </p>
+      </div>
+    </div>
   </div>
-  </div>
-  </div>
-  <% end %>
+<% end %>
 
