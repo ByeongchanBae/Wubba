@@ -1,21 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-  <%= link_to "#", class: "navbar-brand" do %>
-    <p>WUBBA</p>
-    <% end %>
-    <%= link_to dashboard_path do %>
-     <i class="far fa-bell fa-2x"></i>
-     <% if user_signed_in? %>
-       <span class="badge badge-danger js-notification-count fa-1x"><%= current_user.notifications.unread.count %></span>
-     <% end %>
-    <% end %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
         <li class="nav-item">
           <%= link_to "Home", dashboard_path, class: "nav-link" %>
         </li>
@@ -35,23 +27,29 @@
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Match", matches_path, class: "dropdown-item" %>
-            <%= link_to "Profile", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
+        <% else %>
         <li class="nav-item">
           <%= link_to "LOGIN", new_user_session_path, class: "login" %>
         </li>
         <li class="nav-item">
           <%= link_to "SIGN UP", new_user_registration_path, class:"btn-primary sign" %>
         </li>
-      <% end %>
-    </ul>
+        <% end %>
+      </ul>
+    </div>
+    <%= link_to "#", class: "navbar-brand" do %>
+    <p>WUBBA</p>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to dashboard_path do %>
+    <i class="far fa-bell fa-2x"></i>
+    <% if user_signed_in? %>
+    <span class="badge badge-danger js-notification-count fa-1x"><%= current_user.notifications.unread.count %></span>
+    <% end %>
+    <% end %>
+    <% if user_signed_in? %>
+    <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle" %>
+    <% end %>
   </div>
 </div>
