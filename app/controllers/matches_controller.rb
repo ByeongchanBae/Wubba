@@ -20,7 +20,7 @@ class MatchesController < ApplicationController
       if @match.matchee != current_user
         @match.save
         respond_to do |format|
-          format.html { redirect_to match_url(@match) }
+          format.html { redirect_to posts_url }
           format.js
         end
       end

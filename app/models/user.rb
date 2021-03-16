@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :matchers, class_name: "Match", foreign_key: "matcher_id"
   has_many :matchees, class_name: "Match", foreign_key: "matchee_id"
   has_many :posts, dependent: :destroy
-  has_many :notifications, foreign_key: :recipient_id
+  has_many :notifications, foreign_key: :recipient_id, dependent: :destroy
 
 
   def matches
