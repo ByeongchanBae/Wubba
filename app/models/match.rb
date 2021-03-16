@@ -20,10 +20,11 @@ class Match < ApplicationRecord
     elsif self.status == 1
       notification = Notification.new(recipient: self.matchee, actor: self.matcher,
       action: 'matched', notifiable: self)
-    end
-    ActionCable.server.broadcast(
+     ActionCable.server.broadcast(
         "notifications:#{notification.recipient_id}",
         ActionController::Base.new().render_to_string(partial: "notifications/notification", locals: { notification: notification })
       ) if notification.save
+    else self.status == 0
+    end
   end
 end
