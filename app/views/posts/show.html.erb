@@ -33,6 +33,6 @@
     <% end %>
     <br>
     <!-- have on under posted date - have a friend icon -->
-    <%= link_to "Create match", matches_path(match: { matchee_id: @post.user.id, status: 1 } ), method: :post, class: "btn btn-primary" %>
+    <%= link_to "Create match", matches_path(match: { matchee_id: @post.user.id, status: 1 }, request: "post" ), method: :post, class: "btn btn-primary" %>
 </div>
 
