@@ -6,20 +6,52 @@
   <%= submit_tag ("Search") %>
 <% end %>
 
-
 <% if @possibles %>
   <ul id="slides">
     <% @possibles.each_with_index do |possible, i| %>
     <div class="slide <%= 'showing' if i == 0 %>" data-id="<%= possible.id %>">
-      <li class="user-details"> <%= possible.first_name %> </li>
+      <div class="card-white">
+    <h1> Profile </h1>
+    <div class="profile">
       <% if possible.avatar.attached? %>
-      <div class="image-carousel d-flex flex-column text-align-center"> <%= cl_image_tag possible.avatar.key, :width => 250, :crop => "pad", class:"image" %> </div>
-      <% end %>
+      <%= cl_image_tag(possible.avatar.key, class: "avatarimg", :transformation=>[
+        {:width=>400, :height=>400, :gravity=>"face", :crop=>"crop"},
+        {:width=>350, :crop=>"scale"}
+        ]) %>
+        <% end %>
+        <div class="name">
+          <h2> <%= possible.first_name %> </h2>
+        </div>
+        <div class="cards">
+          <div class="box">
+            <h5> Location: </h5>
+            <p><%= possible.first_name %></p>
+          </div>
+          <div class="box">
+            <h5> Age </h5>
+            <p> <%= possible.first_name %></p>
+          </div>
+          <div class="box">
+            <h5> City </h5>
+            <p> <%= possible.first_name %></p>
+          </div>
+          <div class="box">
+            <h5> Experience </h5>
+            <p> <%= possible.first_name %></p>
+          </div>
+        </div>
+      </div>
+    </div>
       <%= link_to "Create match", matches_path(match: { matchee_id: possible.id, status: 1 } ), method: :post, class: "btn btn-primary" %>
       <%= link_to "Decline match", matches_path(match: { matchee_id: possible.id, status: 0 } ), method: :post, class: "btn btn-primary" %>
     </div>
     <% end %>
   </ul>
+
+
+
+
+
 
 
 <div class="d-flex flex-column align-items-center">
