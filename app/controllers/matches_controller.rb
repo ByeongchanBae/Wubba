@@ -10,16 +10,19 @@ class MatchesController < ApplicationController
     @match.status = 2
     if @match.save
       flash.alert = "You matched with #{@matchee.first_name}"
-      redirect_to match_path(@match)
+      respond_to do |format|
+        format.html { redirect_to match_url(@match) }
+        format.js
+      end
     else
       render 'matches_path'
     end
    else
     # create_new_match
+
     @match = Match.new(matchee: @matchee, matcher: current_user, status: match_params[:status])
-    if @match.matcher != current_user
+    if @match.matchee != current_user
       @match.save
-      flash.alert = "You liked #{@matchee.first_name}"
     end
    end
   end
