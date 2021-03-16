@@ -3,12 +3,11 @@ class Comment < ApplicationRecord
   belongs_to :user
 
   after_create :create_notifications
-  after_update :create_notifications
 
   private
 
   def create_notifications
-   notification = Notification.create do |notification|
+    notification = Notification.create do |notification|
     notification.notifiable_type = "comment"
     notification.actor = self.user
     notification.recipient = self.post.user

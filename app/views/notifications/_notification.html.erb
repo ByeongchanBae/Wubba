@@ -7,6 +7,8 @@
     <% end %>
   <% elsif notification.action == 'commented' %>
     <p> <%= notification.actor.first_name %> <%= notification.action %> on your post </p>
+  <% elsif notification.action == 'messaged' %>
+    <p> <%= notification.actor.first_name %> <%= notification.action %> you</p>
   <% end %>
 </div>
 
