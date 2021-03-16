@@ -1,11 +1,12 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <p>WUBBA</p>
     <% end %>
     <%= link_to dashboard_path do %>
-     <i class="far fa-bell"></i>
+     <i class="far fa-bell fa-2x"></i>
      <% if user_signed_in? %>
-       <span class="badge badge-danger js-notification-count"><%= current_user.notifications.unread.count %></span>
+       <span class="badge badge-danger js-notification-count fa-1x"><%= current_user.notifications.unread.count %></span>
      <% end %>
     <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
