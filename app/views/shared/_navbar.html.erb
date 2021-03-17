@@ -38,12 +38,24 @@
       </ul>
     </div>
   </div>
-  <div class="wubba">
+  <a class="wubba" href="#" style="
+    position: absolute;
+    top: 10px;
+    right: 233px;
+    color: white;
+    font-weight: bold;
+    font-size: 26px;
+  ">WUBBA</a>
+<!--   <div class="wubba">
     <%= link_to "#", class: "navbar-brand" do %>
     <p>WUBBA</p>
     <% end %>
-  </div>
-  <div>
+  </div> -->
+  <div style="
+    position: absolute;
+    top: 7px;
+    right: 10px;
+">
     <%= link_to dashboard_path do %>
     <i class="far fa-bell fa-2x"></i>
       <% if user_signed_in? %>
