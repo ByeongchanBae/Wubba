@@ -123,10 +123,11 @@
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-left: 15px;
 }
 .card-product-all img {
-  height: 40%;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
 }
 
@@ -148,4 +149,9 @@
 
 #warning-message {
   width: 80%;
+}
+
+.border {
+      border-bottom-width: var(--border-rule-border-width, 1px) !important;
+    border-bottom-color: var(--color-divider, #EBEBEB) !important;
 }
