@@ -12,6 +12,7 @@
   <ul id="slides">
     <% @possibles.each_with_index do |possible, i| %>
     <div class="slide <%= 'showing' if i == 0 %>" data-id="<%= possible.id %>">
+      <div class="shadow">
       <div class="card-white">
     <div class="profile">
       <% if possible.avatar.attached? %>
@@ -46,6 +47,7 @@
      <%= link_to "Like", matches_path(match: { matchee_id: possible.id, status: 1 } ), method: :post, remote: true, class: "btn btn-primary" %>
       <%= link_to "Reject", matches_path(match: { matchee_id: possible.id, status: 0 } ), method: :post, remote: true, class: "btn btn-primary" %>
     </div>
+      </div>
       </div>
     </div>
     </div>
