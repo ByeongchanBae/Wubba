@@ -1,15 +1,12 @@
 <div class="container-chat">
 
-  <div class="carousel">
+  <div class="chat-members">
     <% @matches.each do |match|%>
-    <%= link_to match_path(match) do %>
-    <div class="card-chat d-flex flex-column">
-      <%= cl_image_tag match.partner(current_user).avatar.key, class:"image-show" %>
-      <p><%= match.partner(current_user).first_name %></p>
-    </div>
+      <%= link_to match_path(match), class: "chat-member" do %>
+        <%= cl_image_tag match.partner(current_user).avatar.key, :width=>300, :height=>300, :gravity=>"faces", radius: 'max', :crop=>"fill" %>
+        <p><%= match.partner(current_user).first_name %></p>
+      <% end %>
     <% end %>
-    <% end %>
-    <!-- carousel end below -->
   </div>
 
   <div class="chat-page">
@@ -26,10 +23,10 @@
  </div>
 
  <div class="chat-box">
-   <%= simple_form_for [ @match, @match_message ], remote: true do |f| %>
+   <%= simple_form_for [ @match, @match_message ], html: {autocomplete: "off"}, remote: true do |f| %>
    <div class="d-flex chat-line">
    <%= f.input :content, label: false, placeholder: "Message #{@match.partner(current_user).first_name}" %>
-   <%= f.submit "Send", class: "btn-chat btn-primary" %>
+   <%= f.submit ">", class: "btn-chat btn-primary" %>
    </div>
    <% end %>
    <!-- chat box end below -->
