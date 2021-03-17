@@ -1,10 +1,13 @@
-<div class="container">
+<div class="container-form">
   <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
     <%= simple_form_for user_selection do |f| %>
-    <%= f.association :tech_stack%>
+    <%= f.association :tech_stack,
+    as: :check_boxes,
+    input_html: { class: "tag-selector" },
+    item_wrapper_class: 'tag-item' %>
     <%= f.input :experience %>
     <%= f.input :objective %>
-    <%= f.button :submit, "Find your buddy", class: "btn btn-primary" %>
+    <%= f.button :submit, "Find your wubba", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
