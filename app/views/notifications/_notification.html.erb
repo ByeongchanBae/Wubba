@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <% if notification.action == 'matched' %>
     <p> <%= notification.actor.first_name %> <%= notification.action %> with you</p>
     <% match = Match.find(notification.notifiable_id) %>
@@ -11,6 +11,27 @@
   <% elsif notification.action == 'messaged' %>
     <p> <%= notification.actor.first_name %> <%= notification.action %> you</p>
   <% end %>
+</div> -->
+
+<div class="notification">
+  <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+  <div class="notification-content">
+  <% if notification.action == 'matched' %>
+    <p> <%= notification.actor.first_name %> <%= notification.action %> with you</p>
+    <% match = Match.find(notification.notifiable_id) %>
+    <% if match.status == 1 %>
+      <%= link_to "Accept Wubba", "matches?match%5Bmatchee_id%5D=#{notification.actor.id}&match%5Bstatus%5D=2", method: :post, class: "btn btn-primary" %>
+      <%= link_to "Reject", "matches?match%5Bmatchee_id%5D=#{notification.actor.id}&match%5Bstatus%5D=0", method: :post, remote: true, class: "btn btn-primary" %>
+    <% end %>
+  <% elsif notification.action == 'commented' %>
+    <p> <%= notification.actor.first_name %> <%= notification.action %> on your post </p>
+  <% elsif notification.action == 'messaged' %>
+    <p> <%= notification.actor.first_name %> <%= notification.action %> you</p>
+  <% end %>
+  </div>
+
+  <div class="notification-actions">
+    <a href="#">Accept <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Reject <i class="far fa-trash-alt"></i></a>
+  </div>
 </div>
-
-
