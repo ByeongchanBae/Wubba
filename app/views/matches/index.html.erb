@@ -12,6 +12,7 @@
   <ul id="slides">
     <% @possibles.each_with_index do |possible, i| %>
     <div class="slide <%= 'showing' if i == 0 %>" data-id="<%= possible.id %>">
+      <div class="shadow">
       <div class="card-white">
     <div class="profile">
       <% if possible.avatar.attached? %>
@@ -50,6 +51,7 @@
       <i class="fa fa-check fa-1.5x text-danger ml-3"></i>
       <% end %>
     </div>
+      </div>
       </div>
     </div>
     </div>
