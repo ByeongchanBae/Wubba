@@ -49,16 +49,14 @@
             </div>
           </div>
           <div class="box">
-            <%= link_to new_user_selection_path do %>
               <h5> Tech Stack </h5>
-            <% end %>
               <% @user.tech_stacks.each do |tech_stack| %>
               <%= tech_stack.name %>
               <% end %>
             </br>
           </br>
-               <%= link_to new_user_selection_path do %>
-              <h5> Add Stack </h5>
+              <%= link_to new_user_selection_path do %>
+              <h3> Add Stack </h3>
             <% end %>
             </div>
         </div>
