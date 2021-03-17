@@ -15,3 +15,51 @@ h1 {
 .wubba-form {
   margin-top: 5px;
 }
+
+
+.tag-item {
+  display: inline-block;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #ECEAFF;
+  color: #7E73FF;
+  border: 1px solid #7E73FF;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag-selector:checked + label {
+  background-color: #7E73FF;
+  color: white;
+}
+
+#add-stack {
+  margin-top: 9px;
+  color: #FF385C;
+  font-weight: bold;
+}
+
+.btn-stack {
+  width: 320px;
+  margin-top: 10px;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #FF385C;
+}
