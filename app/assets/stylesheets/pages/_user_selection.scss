@@ -1,10 +1,17 @@
-.card-white {
+.card-form {
   background: white;
   height: 100vh;
   background-image: image-url('watermelon-pack-illustration-11.png');
 h1 {
   color: #FF385C;
 }
+
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #FF385C;
+}
+
 }
 
 .container-form {
@@ -48,6 +55,8 @@ h1 {
   margin-top: 9px;
   color: #FF385C;
   font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
 }
 
 .btn-stack {
@@ -56,10 +65,4 @@ h1 {
   padding: 15px;
   font-size: 20px;
   border-radius: 15px;
-}
-
-input[type=text] {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #FF385C;
 }
