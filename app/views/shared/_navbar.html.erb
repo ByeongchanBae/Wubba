@@ -37,6 +37,8 @@
         <% end %>
       </ul>
     </div>
+  </div>
+  <div class="wubba">
     <%= link_to "#", class: "navbar-brand" do %>
     <p>WUBBA</p>
     <% end %>
@@ -44,12 +46,12 @@
   <div>
     <%= link_to dashboard_path do %>
     <i class="far fa-bell fa-2x"></i>
-    <% if user_signed_in? %>
-    <span class="badge badge-danger js-notification-count fa-1x"><%= current_user.notifications.unread.count %></span>
+      <% if user_signed_in? %>
+      <span class="badge badge-danger js-notification-count fa-1x"><%= current_user.notifications.unread.count %></span>
+      <% end %>
     <% end %>
-    <% end %>
-    <% if user_signed_in? %>
-    <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle" %>
-    <% end %>
+      <% if user_signed_in? %>
+      <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle" %>
+      <% end %>
   </div>
 </div>
