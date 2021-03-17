@@ -41,7 +41,7 @@
   <a class="wubba" href="#" style="
     position: absolute;
     top: 10px;
-    right: 233px;
+    right: 223px;
     color: white;
     font-weight: bold;
     font-size: 26px;
@@ -53,13 +53,16 @@
   </div> -->
   <div style="
     position: absolute;
-    top: 7px;
+    top: 8px;
     right: 10px;
 ">
     <%= link_to dashboard_path do %>
-    <i class="far fa-bell fa-2x"></i>
+    <i class="far fa-bell fa-lg" ></i>
       <% if user_signed_in? %>
-      <span class="badge badge-danger js-notification-count fa-1x"><%= current_user.notifications.unread.count %></span>
+      <span class="badge badge-danger js-notification-count fa-sm" style="
+    position: absolute;
+    left: -27px;
+" ><%= current_user.notifications.unread.count %></span>
       <% end %>
     <% end %>
       <% if user_signed_in? %>
