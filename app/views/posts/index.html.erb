@@ -6,7 +6,7 @@
   </div>
   <div class="card-product-all">
     <!-- change to user avatar -->
-    <%= cl_image_tag post.user.avatar.key, class:"image-show" %>
+    <%= cl_image_tag post.user.avatar.key, class:"post-image" %>
     <div class="card-product-infos">
       <h2> <%= link_to post.title, post_path(post) %> </h2>
       <p> Posted by: <%= post.user.first_name %> <%= post.user.last_name %> </p>
