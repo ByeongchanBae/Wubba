@@ -10,23 +10,25 @@
   <% end %>
   </div>
 
-  <div class="notification-actions">
-    <% match = Match.find(notification.notifiable_id) %>
-    <% if match.status == 1 %>
-      <%= link_to "matches?match%5Bmatchee_id%5D=#{notification.actor.id}&match%5Bstatus%5D=2", method: :post, class: "btn btn-primary" do %>
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M5 12l5 5l10 -10" />
-        </svg>
+  <% if notification.notifiable_type == "Match" %>
+    <div class="notification-actions">
+      <% match = Match.find(notification.notifiable_id) %>
+      <% if match.status == 1 %>
+        <%= link_to "matches?match%5Bmatchee_id%5D=#{notification.actor.id}&match%5Bstatus%5D=2", method: :post, class: "btn btn-primary" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M5 12l5 5l10 -10" />
+          </svg>
+        <% end %>
+        <%= link_to "matches?match%5Bmatchee_id%5D=#{notification.actor.id}&match%5Bstatus%5D=0", method: :post, class: "btn btn-primary" do %>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        <% end %>
       <% end %>
-      <%= link_to "matches?match%5Bmatchee_id%5D=#{notification.actor.id}&match%5Bstatus%5D=0", method: :post, class: "btn btn-primary" do %>
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
 
