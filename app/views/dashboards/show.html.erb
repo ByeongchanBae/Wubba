@@ -8,7 +8,7 @@
 </ul>
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-<!-- requests -->
+<!-- Notifications -->
 <h1>Notifications</h1>
 <div id="notifications">
   <% @notifications.each do |notification| %>
@@ -16,6 +16,7 @@
   <% end %>
 </div>
   </div>
+  <!-- Profile -->
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
     <div class="card-white">
       <h1> Profile </h1>
@@ -47,6 +48,19 @@
               <p> <%= @user.experience_level %></p>
             </div>
           </div>
+          <div class="box">
+            <%= link_to new_user_selection_path do %>
+              <h5> Tech Stack </h5>
+            <% end %>
+              <% @user.tech_stacks.each do |tech_stack| %>
+              <%= tech_stack.name %>
+              <% end %>
+            </br>
+          </br>
+               <%= link_to new_user_selection_path do %>
+              <h5> Add Stack </h5>
+            <% end %>
+            </div>
         </div>
       </div>
     </div>
