@@ -27,6 +27,7 @@ require("../includes/slides.js")
 import "bootstrap";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { initNotificationCable } from "../channels/notification_channel";
+import { initSelect2 } from '../includes/init_select2';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -35,5 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initChatroomCable()
   initNotificationCable()
+  initSelect2();
   // initSearchSubmit()
 });
