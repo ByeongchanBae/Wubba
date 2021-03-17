@@ -149,3 +149,8 @@
 #warning-message {
   width: 80%;
 }
+
+.border {
+      border-bottom-width: var(--border-rule-border-width, 1px) !important;
+    border-bottom-color: var(--color-divider, #EBEBEB) !important;
+}
