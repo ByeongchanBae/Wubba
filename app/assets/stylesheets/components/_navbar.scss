@@ -38,6 +38,7 @@
 
 .navbar-light .navbar-nav .nav-link {
   color: white;
+  font-weight: bold;
 }
 
 .navbar-lewagon .navbar-brand {
@@ -45,3 +46,8 @@
   font-weight: bold;
 }
 
+.fa-lg {
+position: absolute;
+    right: 64px;
+    top: 11px;
+  }
