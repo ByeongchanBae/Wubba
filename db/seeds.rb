@@ -281,6 +281,156 @@ user_list = [{
   employment_status: "Beginner",
   bootcamp: false,
   experience_level: "0 years"
+},
+{
+  email: "brad@gmail.com",
+  password: "password",
+  first_name: "Brad",
+  last_name: "Son",
+  username: "braidson1",
+  city: "Sydney",
+  country: "Australia",
+  gender: "Male",
+  education: "Bachelor in Computer Science at Harvard University",
+  age: 28,
+  employment_status: "Advanced",
+  bootcamp: false,
+  experience_level: "7 years"
+},
+{
+  email: "jayden@gmail.com",
+  password: "password",
+  first_name: "Jayden",
+  last_name: "Knee",
+  username: "jaydenknee",
+  city: "Brisbane",
+  country: "Australia",
+  gender: "Male",
+  education: "University of Queensland Bachelor of Computer Science",
+  age: 22,
+  employment_status: "Beginner",
+  bootcamp: false,
+  experience_level: "1 year"
+},
+{
+  email: "joseph@gmail.com",
+  password: "password",
+  first_name: "Joseph",
+  last_name: "Micheals",
+  username: "josephm1",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Male",
+  education: "University of Melbourne Bachelor of Computer Science",
+  age: 45,
+  employment_status: "Advanced",
+  bootcamp: false,
+  experience_level: "25 years"
+},
+{
+  email: "cassy@gmail.com",
+  password: "password",
+  first_name: "Cassy",
+  last_name: "Smtih",
+  username: "cassysmith",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Female",
+  education: "University of Melbourne Bachelor of Computer Science",
+  age: 20,
+  employment_status: "Beginner",
+  bootcamp: false,
+  experience_level: "0 years"
+},
+{
+  email: "kyle@gmail.com",
+  password: "password",
+  first_name: "Kyle",
+  last_name: "Smtih",
+  username: "kylesmith",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Male",
+  education: "University of Melbourne Bachelor of Computer Science",
+  age: 20,
+  employment_status: "Beginner",
+  bootcamp: false,
+  experience_level: "0 years"
+},
+{
+  email: "kevin@gmail.com",
+  password: "password",
+  first_name: "Kevin",
+  last_name: "Tan",
+  username: "kevintan",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Male",
+  education: "University of Melbourne Bachelor of Computer Science",
+  age: 21,
+  employment_status: "Beginner",
+  bootcamp: false,
+  experience_level: "0 years"
+},
+{
+  email: "brett@gmail.com",
+  password: "password",
+  first_name: "Brett",
+  last_name: "Everett",
+  username: "bretteverett",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Male",
+  education: "Monash University Bachelor of Computer Science",
+  age: 21,
+  employment_status: "Beginner",
+  bootcamp: false,
+  experience_level: "0 years"
+},
+{
+  email: "kasper@gmail.com",
+  password: "password",
+  first_name: "Kasper",
+  last_name: "Knights",
+  username: "kasperknights",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Male",
+  education: "Monash University Bachelor of Computer Science",
+  age: 19,
+  employment_status: "Beginner",
+  bootcamp: false,
+  experience_level: "0 years"
+},
+{
+  email: "kennedy@gmail.com",
+  password: "password",
+  first_name: "Kennedy",
+  last_name: "Devlin",
+  username: "kennedy_d",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Male",
+  education: "Monash University Bachelor of Computer Science",
+  age: 26,
+  employment_status: "Intermediate",
+  bootcamp: false,
+  experience_level: "4 years"
+},
+{
+  email: "henry@gmail.com",
+  password: "password",
+  first_name: "Henry",
+  last_name: "Joseph",
+  username: "henryj",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Male",
+  education: "Monash University Bachelor of Computer Science",
+  age: 26,
+  employment_status: "Intermediate",
+  bootcamp: false,
+  experience_level: "4 years"
 }]
 
 #  images
@@ -293,7 +443,7 @@ file = URI.open('https://images.unsplash.com/photo-1556157382-97eda2d62296?ixid=
 user = User.find_by(email: "angus@gmail.com")
 user.avatar.attach(io: file, filename: 'user2.png', content_type: 'image/png')
 
-file = URI.open('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
+file = URI.open('https://images.unsplash.com/photo-1514355315815-2b64b0216b14?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
 user = User.find_by(email: "kiera@gmail.com")
 user.avatar.attach(io: file, filename: 'user3.png', content_type: 'image/png')
 
@@ -352,6 +502,47 @@ user.avatar.attach(io: file, filename: 'user15.png', content_type: 'image/png')
 file = URI.open('https://images.unsplash.com/photo-1592085549957-ca20be013d96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=576&q=80')
 user = User.find_by(email: "maia@gmail.com")
 user.avatar.attach(io: file, filename: 'user16.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1568493021943-4077b55c95a3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+user = User.find_by(email: "brad@gmail.com")
+user.avatar.attach(io: file, filename: 'user17.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1604891692156-3f1db6499c72?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+user = User.find_by(email: "jayden@gmail.com")
+user.avatar.attach(io: file, filename: 'user18.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+user = User.find_by(email: "joseph@gmail.com")
+user.avatar.attach(io: file, filename: 'user19.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80')
+user = User.find_by(email: "cassy@gmail.com")
+user.avatar.attach(io: file, filename: 'user20.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1559687495-6ed41da2c140?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80')
+user = User.find_by(email: "kyle@gmail.com")
+user.avatar.attach(io: file, filename: 'user21.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1544168190-79c17527004f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+user = User.find_by(email: "kevin@gmail.com")
+user.avatar.attach(io: file, filename: 'user22.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1568880893176-fb2bdab44e41?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1053&q=80')
+user = User.find_by(email: "brett@gmail.com")
+user.avatar.attach(io: file, filename: 'user23.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1541855492-581f618f69a0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
+user = User.find_by(email: "kasper@gmail.com")
+user.avatar.attach(io: file, filename: 'user24.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+user = User.find_by(email: "kennedy@gmail.com")
+user.avatar.attach(io: file, filename: 'user25.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1592023031338-ee30ef94abbc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+user = User.find_by(email: "henry@gmail.com")
+user.avatar.attach(io: file, filename: 'user26.png', content_type: 'image/png')
+
 
 puts "Created #{User.count} users!"
 
@@ -517,6 +708,66 @@ user_selections_list = [{
   tech_stack: TechStack.find_by(name: "C++"),
   experience: "Beginner",
   objective: "Looking for someone to practice code"
+},
+{
+  user: User.find_by(email: "brad@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Advanced",
+  objective: "Wanting to help others to learn JavaScript"
+},
+{
+  user: User.find_by(email: "jayden@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Beginner",
+  objective: "Looking for people to build projects"
+},
+{
+  user: User.find_by(email: "joseph@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Advanced",
+  objective: "Wanting to help others to learn JavaScript"
+},
+{
+  user: User.find_by(email: "cassy@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Beginner",
+  objective: "Wanting to learn JavaScript"
+},
+{
+  user: User.find_by(email: "kyle@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Beginner",
+  objective: "Wanting to learn JavaScript"
+},
+{
+  user: User.find_by(email: "kevin@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Beginner",
+  objective: "Wanting to learn JavaScript"
+},
+{
+  user: User.find_by(email: "brett@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Beginner",
+  objective: "Wanting to learn JavaScript"
+},
+{
+  user: User.find_by(email: "kasper@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Beginner",
+  objective: "Wanting to learn JavaScript"
+},
+{
+  user: User.find_by(email: "kennedy@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Intermediate",
+  objective: "Wanting to challenge myself with my skills"
+},
+{
+  user: User.find_by(email: "henry@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Intermediate",
+  objective: "Wanting to challenge myself with my skills"
 }]
 
 UserSelection.create!(user_selections_list)
