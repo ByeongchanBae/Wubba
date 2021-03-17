@@ -7,6 +7,7 @@
         <h2> <%= @post.title %> </h2>
         <p> Posted by: <%= @post.user.first_name %> <%= @post.user.last_name %> </p>
         <p>  Date posted: <%= @post.date %></p>
+        <%= link_to "Create match", matches_path(match: { matchee_id: @post.user.id, status: 1 } ), method: :post, class: "btn btn-primary" %>
       </div>
     </div>
     <div class="card-product">
