@@ -7,7 +7,7 @@ class MatchesController < ApplicationController
   # checking to see if status is alraedy one
     if @matches.length >= 1
       @match = @matches.first
-      @match.status = match_params[:status]
+      match_params[:status].to_i == 0 ? @match.status = 0 : @match.status = 2
       if @match.save
         redirect_to match_path(@match) if @match.status == 2
         redirect_back(fallback_location: root_path) if @match.status == 0

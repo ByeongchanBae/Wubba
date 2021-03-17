@@ -11,9 +11,9 @@ class User < ApplicationRecord
   has_many :notifications, foreign_key: :recipient_id
 
 
-  def matches
-   (matchers.where(status: 2) + matchees.where(status: 2)).uniq
-  end
+  # def matches
+  #  (matchers.where(status: 2) + matchees.where(status: 2)).uniq
+  # end
 
 # a search is a tech_stack
   def self.search(search, current_user)
