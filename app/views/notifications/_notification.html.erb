@@ -3,11 +3,6 @@
   <div class="notification-content">
   <% if notification.action == 'matched' %>
     <p> <%= notification.actor.first_name %> sent you a match request</p>
-    <% match = Match.find(notification.notifiable_id) %>
-    <% if match.status == 1 %>
-      <%= link_to "Accept Wubba", "matches?match%5Bmatchee_id%5D=#{notification.actor.id}&match%5Bstatus%5D=2", method: :post, class: "btn btn-primary" %>
-      <%= link_to "Reject", "matches?match%5Bmatchee_id%5D=#{notification.actor.id}&match%5Bstatus%5D=0", method: :post, class: "btn btn-primary" %>
-    <% end %>
   <% elsif notification.action == 'commented' %>
     <p> <%= notification.actor.first_name %> <%= notification.action %> on your post </p>
   <% elsif notification.action == 'messaged' %>
@@ -16,7 +11,22 @@
   </div>
 
   <div class="notification-actions">
-    <a href="#">Accept <i class="fas fa-pencil-alt"></i></a>
-    <a href="#">Reject <i class="far fa-trash-alt"></i></a>
+    <% match = Match.find(notification.notifiable_id) %>
+    <% if match.status == 1 %>
+      <%= link_to "matches?match%5Bmatchee_id%5D=#{notification.actor.id}&match%5Bstatus%5D=2", method: :post, class: "btn btn-primary" do %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M5 12l5 5l10 -10" />
+        </svg>
+      <% end %>
+      <%= link_to "matches?match%5Bmatchee_id%5D=#{notification.actor.id}&match%5Bstatus%5D=0", method: :post, class: "btn btn-primary" do %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      <% end %>
+    <% end %>
   </div>
 </div>
+
