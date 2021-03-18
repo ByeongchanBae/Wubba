@@ -435,7 +435,7 @@ user_list = [{
 
 #  images
 User.create!(user_list)
-file = URI.open('https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
+file = URI.open('https://res.cloudinary.com/dbpprlxfm/image/upload/v1616039041/f0mojxyeiwr7pdo0gwc9.jpg')
 user = User.find_by(email: "ryan@gmail.com")
 user.avatar.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
