@@ -1,5 +1,5 @@
 meta_product_name: "Wubba"
 meta_title: "Wubba - Learning is a series of partnerships"
 meta_description: "Wubba introduces learning of a series of partnerships"
-meta_image: "watermelon-pack-illustration-18.png" # should exist in `app/assets/images/`
+meta_image: "ogImg.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
