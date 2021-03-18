@@ -24,6 +24,8 @@
   }
 }
 
+
+
 .chat-message {
   display: flex;
   flex-direction: column;
@@ -47,6 +49,7 @@
   width: 100%;
   overflow-x: scroll;
   padding: 15px;
+   border-bottom: 1px solid #ebebeb;
 
   .chat-member {
     padding: 10px;
