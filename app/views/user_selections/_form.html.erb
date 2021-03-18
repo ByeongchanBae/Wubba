@@ -1,5 +1,5 @@
 <div class="container-form">
-  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+  <div class="form-wrapper">
     <%= simple_form_for user_selection do |f| %>
     <%= f.association :tech_stack, :as => :check_boxes,
     input_html: { class: "tag-selector" },
