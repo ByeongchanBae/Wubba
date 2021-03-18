@@ -4,7 +4,8 @@
       <!-- change to user avatar pic -->
       <%= cl_image_tag @post.user.avatar.key, class:"post-image" %>
       <div class="card-product-infos">
-         <% if  Match.find_by(matcher: current_user, matchee: @post.user).nil? && Match.find_by(matchee: current_user, matcher: @post.user, status: [0, 2]).nil? %>
+         <% if current_user == @post.user %>
+         <% elsif  Match.find_by(matcher: current_user, matchee: @post.user).nil? && Match.find_by(matchee: current_user, matcher: @post.user, status: [0, 2]).nil? %>
           <%= link_to matches_path(match: { matchee_id: @post.user.id, status: 1 }, request: "post" ), method: :post do %>
           <i class="fas fa-user-plus fa-2x mb-2 pink-friend"></i>
           <% end %>
