@@ -42,15 +42,15 @@
                 <p> <%= possible.user_selections.last.objective %></p>
               </div>
             </div>
-            <div class="d-flex justify-content-center">
-              <%= link_to matches_path(match: { matchee_id: possible.id, status: 0 } ), method: :post, remote: true do %>
+            <div class="d-flex justify-content-around" style="padding-bottom: 20px; padding-top: 12px;">
+              <%= link_to matches_path(match: { matchee_id: possible.id, status: 0 } ), method: :post, class: "btn btn-primary swipe" do %>
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
               <% end %>
-              <%= link_to matches_path(match: { matchee_id: possible.id, status: 1 } ), method: :post, remote: true do %>
+              <%= link_to matches_path(match: { matchee_id: possible.id, status: 1 } ), method: :post, class: "btn btn-primary swipe" do %>
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M5 12l5 5l10 -10" />
@@ -71,7 +71,7 @@
   </div>
 </div>
 <% else %>
-<div class="banner">
+<div class="melon">
   <%= image_tag("watermelon-pack-illustration-16.png") %>
 </div>
 <% end %>
