@@ -15,12 +15,23 @@
     font-size: 16px;
 "> <%= @post.description %> </p>
     </div>
+        <div class="postbutton">
+    <% if current_user == @post.user %>
+      <%= link_to 'Edit Post', edit_post_path(@post), class:"btn btn-secondary" %>
+      <%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to remove this post?'}, class:"btn btn-danger" %>
+    <% elsif  Match.find_by(matcher: current_user, matchee: @post.user).nil? && Match.find_by(matchee: current_user, matcher: @post.user, status: [0, 2]).nil? %>
+    <!-- have on under posted date - have a friend icon -->
+      <%= link_to "Send Wubba", matches_path(match: { matchee_id: @post.user.id, status: 1 }, request: "post" ), method: :post, class: "btn btn-primary" %>
+    <% end %>
+    </div>
      <div style="margin-top: 10px;margin-bottom: 10px;">
     <div class="border"></div>
   </div>
 <!--     <div class="card-product-infos">
       <h2>Comments</h2>
     </div> -->
+
+
     <div class="card-product-infos">
       <% @post.comments.each do |comment| %>
       <p style="font-weight: bold;"> <%= comment.user.username %></p>
@@ -36,15 +47,5 @@
     <% end %>
     </div>
   </div>
-    <br>
-    <div class="postbutton">
-    <% if current_user == @post.user %>
-      <%= link_to 'Edit Post', edit_post_path(@post), class:"btn btn-secondary" %>
-      <%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to remove this post?'}, class:"btn btn-danger" %>
-    <% elsif  Match.find_by(matcher: current_user, matchee: @post.user).nil? && Match.find_by(matchee: current_user, matcher: @post.user, status: [0, 2]).nil? %>
-    <!-- have on under posted date - have a friend icon -->
-      <%= link_to "Create match", matches_path(match: { matchee_id: @post.user.id, status: 1 }, request: "post" ), method: :post, class: "btn btn-primary" %>
-    <% end %>
-    </div>
 </div>
 
