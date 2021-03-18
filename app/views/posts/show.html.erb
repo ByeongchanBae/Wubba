@@ -10,25 +10,32 @@
       </div>
     </div>
     <div class="card-product">
-      <p> <%= @post.description %> </p>
+      <p style="
+    padding: 12px;
+    font-size: 16px;
+"> <%= @post.description %> </p>
     </div>
      <div style="margin-top: 10px;margin-bottom: 10px;">
     <div class="border"></div>
   </div>
-    <div class="card-product-infos">
+<!--     <div class="card-product-infos">
       <h2>Comments</h2>
-    </div>
+    </div> -->
     <div class="card-product-infos">
       <% @post.comments.each do |comment| %>
-      <p> <%= comment.user.username %> replied: <%= comment.reply %> </p>
+      <p style="font-weight: bold;"> <%= comment.user.username %></p>
+      <p><%= comment.reply %> </p>
       <% end %>
     </div>
-    <div class="card-product-infos">
+    <br>
+    <div class="chat-box">
       <%= simple_form_for [@post, @comment] do |f| %>
-      <%= f.input :reply %>
-      <%= f.submit %>
+    <div class="card-product-infos d-flex chat-line">
+      <%= f.input :reply, label: false, placeholder: "Comment" %>
+      <%= f.submit ">", class: "btn-chat btn-primary" %>
     <% end %>
     </div>
+  </div>
     <br>
     <div class="postbutton">
     <% if current_user == @post.user %>
