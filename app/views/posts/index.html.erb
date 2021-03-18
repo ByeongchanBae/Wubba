@@ -1,10 +1,10 @@
 <div class="card-white">
-  <h1> All Posts </h1>
+  <h1 class="my-4"> All Posts </h1>
   <% @posts.each do |post| %>
   <div style="margin-top: 10px;margin-bottom: 10px;">
     <div class="border"></div>
   </div>
-  <div class="card-product-all">
+  <div class="card-product-all my-3">
     <!-- change to user avatar -->
     <%= cl_image_tag post.user.avatar.key, class:"post-image" %>
     <div class="card-product-infos">
@@ -20,6 +20,6 @@
       </div>
     </div>
   </div>
-  </br>
+<!--   </br> -->
   <% end %>
 </div>

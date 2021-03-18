@@ -1,7 +1,7 @@
 .btn-red {
   background-color: transparent;
   color: #FF385C;
-  padding: 10px 10px;
+  padding: 2px 28px;
   border-radius: 4px;
   border: solid 1px #FF385C;
 }
@@ -13,5 +13,43 @@ html {
 .postbutton {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding-bottom: 10px;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  color: #fff;
+  background-color: red;
+  border-color: red;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: red;
+  border-color: red;
+}
+
+.btn-red:focus {
+  color: #fff;
+  background-color: red;
+  border-color: red;
+  outline: red;
+}
+
+.btn-primary:focus {
+  color: #fff;
+  background-color: red;
+  border-color: red;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  color: #fff;
+  background-color: red;
+  border-color: red;
+}
+
+.btn-secondary {
+  color: white;
+  background-color: #FF385C;
+  border-color: #FF385C;
 }

@@ -54,16 +54,18 @@ position: absolute;
 
 .navbar {
   z-index: 10;
+  padding-bottom: 14px;
 }
 
 @media screen and (max-width: 600px) {
   .wubba {
     position: absolute;
     top: 10px;
-    right: 192px;
+    right: 139px;
     color: white;
     font-weight: bold;
     font-size: 26px;
+    letter-spacing: 0.08rem;
   }
 }
 
