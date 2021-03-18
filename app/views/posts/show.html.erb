@@ -10,25 +10,34 @@
       </div>
     </div>
     <div class="card-product">
-      <p> <%= @post.description %> </p>
+      <p style="
+    padding: 12px;
+    font-size: 16px;
+"> <%= @post.description %> </p>
     </div>
      <div style="margin-top: 10px;margin-bottom: 10px;">
     <div class="border"></div>
   </div>
-    <div class="card-product-infos">
+<!--     <div class="card-product-infos">
       <h2>Comments</h2>
-    </div>
+    </div> -->
     <div class="card-product-infos">
       <% @post.comments.each do |comment| %>
-      <p> <%= comment.user.username %> replied: <%= comment.reply %> </p>
+      <p style="font-weight: bold;"> <%= comment.user.username %></p>
+      <p><%= comment.reply %> </p>
       <% end %>
     </div>
-    <div class="card-product-infos">
+    <br>
+    <div class="chat-box">
       <%= simple_form_for [@post, @comment] do |f| %>
-      <%= f.input :reply %>
-      <%= f.submit %>
+    <div class="card-product-infos d-flex chat-line">
+      <%= f.input :reply, label: false, placeholder: "Comment" %>
+      <%= f.submit ">", class: "btn-chat btn-primary" %>
     <% end %>
     </div>
+  </div>
+    <br>
+    <div class="postbutton">
     <% if current_user == @post.user %>
       <%= link_to 'Edit Post', edit_post_path(@post), class:"btn btn-secondary" %>
       <%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to remove this post?'}, class:"btn btn-danger" %>
@@ -36,5 +45,6 @@
     <!-- have on under posted date - have a friend icon -->
       <%= link_to "Create match", matches_path(match: { matchee_id: @post.user.id, status: 1 }, request: "post" ), method: :post, class: "btn btn-primary" %>
     <% end %>
+    </div>
 </div>
 
