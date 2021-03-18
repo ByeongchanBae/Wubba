@@ -4,6 +4,9 @@
       <!-- change to user avatar pic -->
       <%= cl_image_tag @post.user.avatar.key, class:"post-image" %>
       <div class="card-product-infos">
+        <%= link_to matches_path(match: { matchee_id: @post.user.id, status: 1 }, request: "post" ), method: :post do %>
+        <i class="fas fa-user-plus fa-2x mb-2 pink-friend"></i>
+        <% end %>
         <h2> <%= @post.title %> </h2>
         <p> Posted by: <%= @post.user.first_name %> <%= @post.user.last_name %> </p>
         <p>  Date posted: <%= @post.date %></p>
@@ -21,7 +24,6 @@
       <%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure you want to remove this post?'}, class:"btn btn-danger" %>
     <% elsif  Match.find_by(matcher: current_user, matchee: @post.user).nil? && Match.find_by(matchee: current_user, matcher: @post.user, status: [0, 2]).nil? %>
     <!-- have on under posted date - have a friend icon -->
-      <%= link_to "Send Wubba", matches_path(match: { matchee_id: @post.user.id, status: 1 }, request: "post" ), method: :post, class: "btn btn-primary" %>
     <% end %>
     </div>
      <div style="margin-top: 10px;margin-bottom: 10px;">
