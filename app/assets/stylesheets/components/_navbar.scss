@@ -51,3 +51,18 @@ position: absolute;
     right: 64px;
     top: 11px;
   }
+
+.navbar {
+  z-index: 10;
+}
+
+@media screen and (max-width: 600px) {
+  .wubba {
+    position: absolute;
+    top: 10px;
+    right: 192px;
+    color: white;
+    font-weight: bold;
+    font-size: 26px;
+  }
+}
