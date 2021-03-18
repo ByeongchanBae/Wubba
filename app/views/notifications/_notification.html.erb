@@ -1,5 +1,8 @@
 <div class="notification">
-  <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+
+  <% if notification.actor.avatar.attached? %>
+      <%= cl_image_tag(notification.actor.avatar.key, class: "avatar-large") %>
+        <% end %>
   <div class="notification-content">
   <% if notification.action == 'matched' %>
     <p> <%= notification.actor.first_name %> sent you a match request</p>

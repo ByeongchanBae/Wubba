@@ -34,9 +34,16 @@
 .banner img {
   height: auto;
   width: 100%;
+  position: absolute;
+  top: 196px;
 }
 
 .btn-primary {
   background-color: #FF385C;
   border-color: #FF385C;
+}
+
+.container {
+  position: absolute;
+  bottom: 137px;
 }
