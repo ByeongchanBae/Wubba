@@ -2,24 +2,28 @@
   padding: 20px;
   padding-bottom: 50px;
 
-  .content {
-    span {
+  p.content {
+      color: white;
       line-height: 1.5em;
       padding: 10px 17px;
       background-color: #FF385C;
       border-radius: 26px;
+      text-align: right;
+      max-width: 80vw;
+      border-radius: 26px 26px 0px 26px;
     }
-  }
+
 
   .partner {
     .chat-message {
       align-items: flex-start;
 
-      .content {
-        span {
+      p.content {
+          color: rgba(0, 0, 0, 0.8 );
           background: #ff385c2e;
+          text-align: left;
+          border-radius: 26px 26px 26px 0px;
         }
-      }
     }
   }
 }
