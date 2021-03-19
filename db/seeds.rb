@@ -35,21 +35,6 @@ user_list = [{
   # avatar: Faker::Avatar.image
 },
 {
-  email: "henry@gmail.com",
-  password: "password",
-  first_name: "Henry",
-  last_name: "Joseph",
-  username: "henryj",
-  city: "Melbourne",
-  country: "Australia",
-  gender: "Male",
-  education: "Monash University Bachelor of Computer Science",
-  age: 26,
-  employment_status: "Intermediate",
-  bootcamp: false,
-  experience_level: "4 years"
-},
-{
   email: "bundy@gmail.com",
   password: "password",
   first_name: "Bundy",
@@ -78,6 +63,21 @@ user_list = [{
   employment_status: "Beginner",
   bootcamp: false,
   experience_level: "0 years"
+},
+{
+  email: "henry@gmail.com",
+  password: "password",
+  first_name: "Henry",
+  last_name: "Joseph",
+  username: "henryj",
+  city: "Melbourne",
+  country: "Australia",
+  gender: "Male",
+  education: "Monash University Bachelor of Computer Science",
+  age: 26,
+  employment_status: "Intermediate",
+  bootcamp: false,
+  experience_level: "4 years"
 },
 {
   email: "johnmc@gmail.com",
@@ -559,10 +559,6 @@ file = URI.open('https://res.cloudinary.com/dbpprlxfm/image/upload/v1616039041/f
 user = User.find_by(email: "ryan@gmail.com")
 user.avatar.attach(io: file, filename: 'user.png', content_type: 'image/png')
 
-file = URI.open('https://images.unsplash.com/photo-1592023031338-ee30ef94abbc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
-user = User.find_by(email: "henry@gmail.com")
-user.avatar.attach(io: file, filename: 'user26.png', content_type: 'image/png')
-
 file = URI.open('https://res.cloudinary.com/dbpprlxfm/image/upload/v1616106709/ma6qpoakqiu1yzax18fe.jpg')
 user = User.find_by(email: "bundy@gmail.com")
 user.avatar.attach(io: file, filename: 'user33.png', content_type: 'image/png')
@@ -570,6 +566,10 @@ user.avatar.attach(io: file, filename: 'user33.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/dbpprlxfm/image/upload/v1616106746/d90k1y2qcvuxfi7cp6sw.jpg')
 user = User.find_by(email: "shivika@gmail.com")
 user.avatar.attach(io: file, filename: 'user34.png', content_type: 'image/png')
+
+file = URI.open('https://images.unsplash.com/photo-1592023031338-ee30ef94abbc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')
+user = User.find_by(email: "henry@gmail.com")
+user.avatar.attach(io: file, filename: 'user26.png', content_type: 'image/png')
 
 file = URI.open('https://res.cloudinary.com/dbpprlxfm/image/upload/v1616106614/bsfrjg6leaxlefyamxp5.jpg')
 user = User.find_by(email: "johnmc@gmail.com")
@@ -766,12 +766,6 @@ user_selections_list = [{
   objective: "To get a graduate position"
 },
 {
-  user: User.find_by(email: "henry@gmail.com"),
-  tech_stack: TechStack.find_by(name: "JavaScript"),
-  experience: "Intermediate",
-  objective: "Wanting to challenge myself with my skills"
-},
-{
   user: User.find_by(email: "bundy@gmail.com"),
   tech_stack: TechStack.find_by(name: "JavaScript"),
   experience: "Beginner",
@@ -782,6 +776,12 @@ user_selections_list = [{
   tech_stack: TechStack.find_by(name: "JavaScript"),
   experience: "Beginner",
   objective: "Wanting to find a coding friend"
+},
+{
+  user: User.find_by(email: "henry@gmail.com"),
+  tech_stack: TechStack.find_by(name: "JavaScript"),
+  experience: "Intermediate",
+  objective: "Wanting to challenge myself with my skills"
 },
 {
   user: User.find_by(email: "johnmc@gmail.com"),
