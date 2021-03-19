@@ -1014,7 +1014,13 @@ posts_list = [{
 {
   title: "Join CodeWars",
   description: "Hello everyone, looking for some friends to play CodeWars with",
-  user: User.find_by(email: "sam@gmail.com"),
+  user: User.find_by(email: "sammc@gmail.com"),
+  date: Date.today
+},
+{
+  title: "Want to find a coding partner",
+  description: "Hello everyone, I was wondering if anyone would like to partner up and practice coding?",
+  user: User.find_by(email: "ryan@gmail.com"),
   date: Date.today
 },
 {
