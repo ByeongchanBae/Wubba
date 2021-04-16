@@ -37,8 +37,8 @@
 
     <div class="pictures">
       <%= link_to dashboard_path do %>
-        <i class="far fa-bell fa-lg" ></i>
         <% if user_signed_in? %>
+        <i class="far fa-bell fa-lg" ></i>
           <span class="badge badge-danger js-notification-count fa-sm"><%= current_user.notifications.unread.count %></span>
         <% end %>
       <% end %>
