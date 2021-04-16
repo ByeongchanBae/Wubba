@@ -54,7 +54,30 @@ position: absolute;
 
 .navbar {
   z-index: 10;
-  padding-bottom: 36px;
+  padding-bottom: 20px;
+}
+
+.navbar-nav .mr-auto {
+  position: absolute;
+  right: 10px;
+}
+
+.nav-pills .nav-link.active {
+  background-color: white;
+  color: #FF385C;
+  width: 50vw;
+  text-align: center;
+  letter-spacing: 0.08em;
+  font-weight: bold;
+}
+
+.nav-pills .nav-link {
+  background-color: #FF385C;
+  color: white;
+  width: 50vw;
+  text-align: center;
+  letter-spacing: 0.08em;
+  font-weight: bold;
 }
 
 // @media screen and (max-width: 600px) {
