@@ -48,12 +48,6 @@
   font-weight: bold;
 }
 
-.fa-lg {
-position: absolute;
-    right: 64px;
-    top: 11px;
-  }
-
 .navbar {
   z-index: 10;
   padding-bottom: 20px;
@@ -90,6 +84,22 @@ position: absolute;
   position: relative;
   top: 8px;
 }
+
+.fa-lg {
+    right: 64px;
+    top: 11px;
+  }
+
+.fa-bell:before {
+    color: white;
+}
+
+.fa-sm {
+  position: relative;
+  top: -9px;
+  right: 5px;
+}
+
 
 // @media screen and (max-width: 600px) {
 //   .pictures {

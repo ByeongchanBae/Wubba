@@ -4,7 +4,6 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
@@ -36,18 +35,15 @@
     </ul>
   </div>
 
-  <!--   <div class="pictures">
-    <%= link_to dashboard_path do %>
-    <i class="far fa-bell fa-lg" ></i>
+    <div class="pictures">
+      <%= link_to dashboard_path do %>
+        <i class="far fa-bell fa-lg" ></i>
+        <% if user_signed_in? %>
+          <span class="badge badge-danger js-notification-count fa-sm"><%= current_user.notifications.unread.count %></span>
+        <% end %>
+      <% end %>
     <% if user_signed_in? %>
-    <span class="badge badge-danger js-notification-count fa-sm" style="
-    position: absolute;
-    left: -27px;
-    " ><%= current_user.notifications.unread.count %></span>
+      <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle" %>
     <% end %>
-    <% end %>
-    <% if user_signed_in? %>
-    <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle" %>
-    <% end %>
-  </div> -->
+    </div>
 </div>
