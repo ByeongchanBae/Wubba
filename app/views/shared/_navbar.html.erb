@@ -1,5 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <h3 class="wubba">WUBBA</h3>
+  <%= link_to "WUBBA", root_path, class: "wubba" %>
+<!--   <a class="wubba">WUBBA</a> -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -8,7 +9,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
       <li class="nav-item">
-        <%= link_to "Home", dashboard_path, class: "nav-link" %>
+        <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
         <% if current_user.matches.last.present? %>
@@ -37,8 +38,8 @@
 
     <div class="pictures">
       <%= link_to dashboard_path do %>
-        <i class="far fa-bell fa-lg" ></i>
         <% if user_signed_in? %>
+        <i class="far fa-bell fa-lg" ></i>
           <span class="badge badge-danger js-notification-count fa-sm"><%= current_user.notifications.unread.count %></span>
         <% end %>
       <% end %>

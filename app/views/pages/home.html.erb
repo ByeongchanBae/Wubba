@@ -1,12 +1,31 @@
-<div class="banner">
-  <h1 style="color: #FF385C;font-size: 72px;text-align: center;position: absolute;top: 82px;right: 850px;">WUBBA</h1>
-  <%= image_tag("watermelon-pack-illustration-19.png") %>
-  <div class="container">
-    <p>Learning is a series of partnerships</p>
-    <% if user_signed_in? %>
-    <% else %>
-      <%= link_to "LOGIN", new_user_session_path, class: "btn-primary sign" %>
-      <%= link_to "SIGN UP", new_user_registration_path, class:"btn-primary sign" %>
-    <% end %>
+<% if user_signed_in? %>
+  <div class="welcome">
+      <h1 class="welcome-to">Welcome to Wubba</h1>
+      <p class="slogan">Learning is a series of partnerships</p>
   </div>
-</div>
+  <div class="homepage-buttons">
+    <%= link_to "Notifications", dashboard_path, class: "btn-primary sign" %>
+    <%= link_to "Matches", match_path(current_user.matches.last), class: "btn-primary sign btn-right" %>
+    <%= link_to "Posts", posts_path, class: "btn-primary sign btn-right" %>
+    <%= link_to "Search Partner", matches_path, class: "btn-primary sign btn-right" %>
+  </div>
+<% else  %>
+  <div class="banner">
+    <div class="homepage-heading">
+      <h1 class="homepage-title">WUBBA</h1>
+    </div>
+  <!--   <div class="wubba-image">
+      <%= image_tag("watermelon-pack-illustration-19.png") %>
+    </div> -->
+    <div class="slogan">
+      <p>Learning is a series of partnerships</p>
+    </div>
+    <div class="login-signup-buttons">
+      <% if user_signed_in? %>
+      <% else %>
+      <%= link_to "LOGIN", new_user_session_path, class: "btn-primary sign btn-left" %>
+      <%= link_to "SIGN UP", new_user_registration_path, class: "btn-primary sign btn-right" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
