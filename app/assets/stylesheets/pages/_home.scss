@@ -50,11 +50,25 @@
 .homepage-title {
   text-align: center;
   color: #FF385C;
-  font-size: 72px;
-  letter-spacing: 0.08rem;
+  font-size: 95px;
+  letter-spacing: 0.40rem;
   font-weight: bold;
 }
 
 .slogan {
   text-align: center;
+  font-size: 33px;
+}
+
+.login-signup-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-left {
+  margin-right: 10px;
+}
+
+.btn-right {
+  margin-left: 10px;
 }

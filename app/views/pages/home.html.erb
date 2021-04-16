@@ -11,8 +11,8 @@
   <div class="login-signup-buttons">
     <% if user_signed_in? %>
     <% else %>
-    <%= link_to "LOGIN", new_user_session_path, class: "btn-primary sign" %>
-    <%= link_to "SIGN UP", new_user_registration_path, class:"btn-primary sign" %>
+    <%= link_to "LOGIN", new_user_session_path, class: "btn-primary sign btn-left" %>
+    <%= link_to "SIGN UP", new_user_registration_path, class: "btn-primary sign btn-right" %>
     <% end %>
   </div>
 </div>
