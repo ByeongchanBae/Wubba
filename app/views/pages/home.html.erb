@@ -5,7 +5,7 @@
   </div>
   <div class="homepage-buttons">
     <%= link_to "Notifications", dashboard_path, class: "btn-primary sign" %>
-    <%= link_to "Messages", new_user_session_path, class: "btn-primary sign btn-right" %>
+    <%= link_to "Matches", match_path(current_user.matches.last), class: "btn-primary sign btn-right" %>
     <%= link_to "Posts", posts_path, class: "btn-primary sign btn-right" %>
     <%= link_to "Search Partner", matches_path, class: "btn-primary sign btn-right" %>
   </div>
