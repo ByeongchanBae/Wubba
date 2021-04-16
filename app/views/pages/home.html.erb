@@ -4,9 +4,9 @@
   <div class="container">
     <p>Learning is a series of partnerships</p>
     <% if user_signed_in? %>
-    <%= link_to "LOGIN", new_user_session_path, class: "btn-primary sign" %>
-    <%= link_to "SIGN UP", new_user_registration_path, class:"btn-primary sign" %>
     <% else %>
+      <%= link_to "LOGIN", new_user_session_path, class: "btn-primary sign" %>
+      <%= link_to "SIGN UP", new_user_registration_path, class:"btn-primary sign" %>
     <% end %>
   </div>
 </div>
