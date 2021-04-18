@@ -1,4 +1,5 @@
 <% if user_signed_in? %>
+<div class="welcome-message">
   <div class="welcome">
       <h1 class="welcome-to">Welcome to Wubba</h1>
       <p class="slogan">Learning is a series of partnerships</p>
@@ -9,6 +10,7 @@
     <%= link_to "Posts", posts_path, class: "btn-primary sign btn-right" %>
     <%= link_to "Search Partner", matches_path, class: "btn-primary sign btn-right" %>
   </div>
+</div>
 <% else  %>
   <div class="banner">
     <div class="homepage-heading">
