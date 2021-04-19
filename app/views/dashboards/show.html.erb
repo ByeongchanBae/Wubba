@@ -24,47 +24,49 @@
   <!-- Profile -->
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
     <div class="card-white">
-      <h1> Profile </h1>
-      <div class="profile">
-        <% if @user.avatar.attached? %>
-        <%= cl_image_tag(@user.avatar.key, class: "avatarimg", :transformation=>[
-          {:width=>400, :height=>400, :gravity=>"face", :crop=>"crop"},
-          {:width=>350, :crop=>"scale"}
-          ]) %>
-          <% end %>
-          <div class="name">
-            <h2> <%= @user.first_name %> </h2>
-          </div>
-          <div class="cards">
-            <div class="box">
-              <h5> Location: </h5>
-              <p><%= @user.city %>, <%= @user.country %></p>
-            </div>
-            <div class="box">
-              <h5> Age </h5>
-              <p> <%= @user.age %></p>
-            </div>
-            <div class="box">
-              <h5> City </h5>
-              <p> <%= @user.city %></p>
-            </div>
-            <div class="box">
-              <h5> Experience </h5>
-              <p> <%= @user.experience_level %></p>
-            </div>
-          </div>
-          <div class="box">
-              <h5> Tech Stack </h5>
-              <% @user.tech_stacks.each do |tech_stack| %>
-              <%= tech_stack.name %>
-              <% end %>
-            </br>
-          </br>
-            <%= link_to "Add Stack", new_user_selection_path, class: "btn-primary sign" %>
-<!--               <%= link_to new_user_selection_path do %>
-              <h3> Add Stack </h3> -->
+      <div class="shadow dashboard-profile">
+        <h1> Profile </h1>
+        <div class="profile">
+          <% if @user.avatar.attached? %>
+          <%= cl_image_tag(@user.avatar.key, class: "avatarimg", :transformation=>[
+            {:width=>400, :height=>400, :gravity=>"face", :crop=>"crop"},
+            {:width=>350, :crop=>"scale"}
+            ]) %>
             <% end %>
+            <div class="name">
+              <h2> <%= @user.first_name %> </h2>
             </div>
+            <div class="cards">
+              <div class="box">
+                <h5> Location: </h5>
+                <p><%= @user.city %>, <%= @user.country %></p>
+              </div>
+              <div class="box">
+                <h5> Age </h5>
+                <p> <%= @user.age %></p>
+              </div>
+              <div class="box">
+                <h5> City </h5>
+                <p> <%= @user.city %></p>
+              </div>
+              <div class="box">
+                <h5> Experience </h5>
+                <p> <%= @user.experience_level %></p>
+              </div>
+            </div>
+            <div class="box">
+                <h5> Tech Stack </h5>
+                <% @user.tech_stacks.each do |tech_stack| %>
+                <%= tech_stack.name %>
+                <% end %>
+              </br>
+            </br>
+              <%= link_to "Add Stack", new_user_selection_path, class: "btn-primary sign", style: "text-align: center" %>
+  <!--               <%= link_to new_user_selection_path do %>
+                <h3> Add Stack </h3> -->
+              <% end %>
+              </div>
+          </div>
         </div>
       </div>
     </div>
