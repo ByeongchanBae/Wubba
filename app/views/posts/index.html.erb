@@ -1,26 +1,28 @@
 <div class="card-white">
   <h1 class="my-4"> All Posts </h1>
-  <p class="back-link ml-3">New Post</p>
+
   <% @posts.each do |post| %>
-  <div style="margin-top: 10px;margin-bottom: 10px;">
-    <div class="border"></div>
-  </div>
-  <div class="card-product-all my-3">
-    <!-- change to user avatar -->
-    <%= cl_image_tag post.user.avatar.key, class:"post-image" %>
-    <div class="card-product-infos">
-      <h2> <%= link_to post.title, post_path(post) %> </h2>
-      <!-- want to be faint gray and smaller font-->
-      <p> Posted by: <%= post.user.first_name %> <%= post.user.last_name %> </p>
-      <p> Date posted: <%= post.date %> </p>
-      <div style="margin-top: 12px;margin-bottom: 24px;">
+    <div style="margin-top: 10px;margin-bottom: 10px;">
+      <div class="border"></div>
+    </div>
+
+    <div class="card-product-all my-3">
+      <%= cl_image_tag post.user.avatar.key, class:"post-image" %>
+
+      <div class="card-product-infos">
+        <h2> <%= link_to post.title, post_path(post) %> </h2>
+        <p> Posted by: <%= post.user.first_name %> <%= post.user.last_name %> </p>
+        <p> Date posted: <%= post.date %> </p>
+
+        <div style="margin-top: 12px;margin-bottom: 24px;">
+
         <div class="border"></div>
-      </div>
-      <div class="card-white">
-       <p> <%= post.description %></p>
+        </div>
+
+        <div class="card-white">
+         <p> <%= post.description %></p>
+        </div>
       </div>
     </div>
-  </div>
-<!--   </br> -->
   <% end %>
 </div>
